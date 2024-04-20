@@ -37,10 +37,10 @@ export const metadata: Metadata = {
     verification: {
         google: 'OjYiqlxK64Fx5dZre97pwHGJ7pYgOP4vQYH1UCOdBuo',
         yandex: '94b9dc01e999c36f',
-        // other: {
-            // 'msvalidate.01': '__DATA__',
+        other: {
+            'msvalidate.01': '9AD4802CE3C4300E2194A1961C37AA76',
             // 'facebook-domain-verification': '__DATA__'
-        // }
+        }
     },
     icons: {
         icon: [
