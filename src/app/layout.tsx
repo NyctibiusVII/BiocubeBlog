@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         capable: true
     },
     verification: {
-        google: 'GWHyntbPuyOF5dAKDB2MVfVNJkJCB7KRXTSVVH3k_ys',
+        google: 'OjYiqlxK64Fx5dZre97pwHGJ7pYgOP4vQYH1UCOdBuo',
         yandex: '94b9dc01e999c36f',
         // other: {
             // 'msvalidate.01': '__DATA__',
