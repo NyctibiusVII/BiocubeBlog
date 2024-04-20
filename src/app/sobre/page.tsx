@@ -1,9 +1,9 @@
-import { homeMetadata, organizationStructuredData } from '@/biocube-seo'
+import { aboutMetadata, organizationStructuredData } from '@/biocube-seo'
 import Head from 'next/head'
 
-export const metadata = homeMetadata
+export const metadata = aboutMetadata
 
-export default function Home() {
+export default function About() {
     return (
         <>
             <Head>
@@ -13,10 +13,9 @@ export default function Home() {
                 />
             </Head>
 
+
             <main className='flex'>
-                Bom dia, este é um trabalho voluntario!
-                <br/>
-                Entre em contato: matheus.dev.07@gmail.com
+                sobre
             </main>
         </>
     )
