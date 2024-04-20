@@ -34,14 +34,14 @@ export const metadata: Metadata = {
         statusBarStyle: 'default',
         capable: true
     },
-    /* verification: {
-        google: '__DATA__',
-        yandex: ['__DATA__'],
-        other: {
-            'msvalidate.01': ['__DATA__'],
-            'facebook-domain-verification': ['__DATA__']
-        }
-    },*/
+    verification: {
+        google: 'GWHyntbPuyOF5dAKDB2MVfVNJkJCB7KRXTSVVH3k_ys',
+        yandex: '94b9dc01e999c36f',
+        // other: {
+            // 'msvalidate.01': '__DATA__',
+            // 'facebook-domain-verification': '__DATA__'
+        // }
+    },
     icons: {
         icon: [
             {
