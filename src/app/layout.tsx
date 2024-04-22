@@ -1,6 +1,6 @@
 import type { Viewport, Metadata } from 'next'
 import { rootUrl } from '@/biocube-data'
-import { Advent_Pro } from 'next/font/google'
+import { adventPro } from './fonts'
 import './globals.css'
 
 export const viewport: Viewport = {
@@ -126,11 +126,6 @@ export const metadata: Metadata = {
     // SEO created based on: https://dminhvu.com/nextjs-seo#meta-tags
 }
 
-const adventPro = Advent_Pro({
-    subsets: ['latin'],
-    weight: ['300', '400', '500', '600', '700']
-})
-
 const ENVIRONMENT = process.env.ENVIRONMENT || 'product'
 const suppressHydrationWarning = ENVIRONMENT === 'product' ? false : true
 
@@ -139,7 +134,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang='pt-BR'>
-            <body className={adventPro.className} suppressHydrationWarning={suppressHydrationWarning}>{children}</body>
+            <body className={`w-screen h-screen ${adventPro.className}`} suppressHydrationWarning={suppressHydrationWarning}>
+                {children}
+            </body>
         </html>
     )
 }
