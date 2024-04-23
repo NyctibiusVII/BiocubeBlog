@@ -2,6 +2,7 @@ import { PARTNER_SLUG, WCA_ID } from './types'
 
 const rootUrl = 'https://biocube.vercel.app' || 'https://biocube.com'
 const wcaApi = 'https://raw.githubusercontent.com/robiningelbrecht/wca-rest-api/master/api'
+const CNPJ = '35.534.583/0001-15'
 
 const partnerSlug = [
     PARTNER_SLUG.BODOCO,
@@ -64,6 +65,7 @@ const athletesBiocubeSocial = {
 export {
     rootUrl,
     wcaApi,
+    CNPJ,
     athletesId_WCA,
     partnerSlug,
     athletesBiocubeSocial
