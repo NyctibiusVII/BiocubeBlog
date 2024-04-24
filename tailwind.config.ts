@@ -42,6 +42,9 @@ const config: Config = {
       'glacier-white': '#ECF0F9'
     },
     extend: {
+      maxWidth: {
+        'app-content': '96rem'
+      },
       height: {
         '100vh-h-12': 'calc(100vh - 3rem)'
       }

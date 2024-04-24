@@ -1,5 +1,7 @@
 import type { Viewport, Metadata } from 'next'
 import { rootUrl } from '@/biocube-data'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
 import { adventPro } from './fonts'
 import './globals.css'
 
@@ -130,12 +132,14 @@ const ENVIRONMENT = process.env.ENVIRONMENT || 'product'
 const suppressHydrationWarning = ENVIRONMENT === 'product' ? false : true
 
 export default function RootLayout({
-    children,
+    children
 }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang='pt-BR'>
-            <body className={`w-screen h-screen ${adventPro.className}`} suppressHydrationWarning={suppressHydrationWarning}>
+            <body className={`w-screen h-screen ${adventPro.className} flex flex-col items-center justify-start`} suppressHydrationWarning={suppressHydrationWarning}>
+                <Header />
                 {children}
+                <Footer />
             </body>
         </html>
     )

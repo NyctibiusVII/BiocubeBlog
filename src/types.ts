@@ -62,6 +62,13 @@ export interface WcaInfoType {
 
 /* -------------------------------------------------- */
 
+export enum APP_ROUTES_NAME {
+    HOME      = 'PRINCIPAL',
+    ATHLETES  = 'ATLETAS',
+    PARTNERS  = 'PARCEIROS',
+    TUTORIALS = 'TUTORIAIS',
+    ABOUT     = 'SOBRE NÓS'
+}
 export enum PARTNER_SLUG {
     BODOCO = 'bodoco',
     MACAE  = 'macae'
@@ -87,4 +94,11 @@ export type ProfileParamsProps = {
 }
 export interface GenerateMetadataProps extends ProfileParamsProps {
     searchParams: { [key: string]: string | string[] | undefined }
+}
+
+/* -------------------------------------------------- */
+
+export type MenuItensType = {
+    href: string
+    content: APP_ROUTES_NAME
 }

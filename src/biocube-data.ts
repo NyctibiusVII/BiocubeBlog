@@ -2,6 +2,7 @@ import { PARTNER_SLUG, WCA_ID } from './types'
 
 const rootUrl = 'https://biocube.vercel.app' || 'https://biocube.com'
 const wcaApi = 'https://raw.githubusercontent.com/robiningelbrecht/wca-rest-api/master/api'
+const storeWebsite = 'https://www.biocubeoficial.com.br'
 const CNPJ = '35.534.583/0001-15'
 
 const partnerSlug = [
@@ -17,6 +18,30 @@ const athletesId_WCA = [
     WCA_ID.MARIA_GAROLA,
     WCA_ID.PEDRO_SASAKI,
     WCA_ID.AUGUSTO_KLAPPOTH
+]
+const appRoutesAbsolutePath = [
+    '/',
+    '/atletas',
+    '/parceiros',
+    '/tutoriais',
+    '/sobre'
+]
+const appRoutesPath = [
+    '/',
+    '/atletas',
+    `/atletas/${athletesId_WCA[0]}`,
+    `/atletas/${athletesId_WCA[1]}`,
+    `/atletas/${athletesId_WCA[2]}`,
+    `/atletas/${athletesId_WCA[3]}`,
+    `/atletas/${athletesId_WCA[4]}`,
+    `/atletas/${athletesId_WCA[5]}`,
+    `/atletas/${athletesId_WCA[6]}`,
+    `/atletas/${athletesId_WCA[7]}`,
+    '/parceiros',
+    `/parceiros/${partnerSlug[0]}`,
+    `/parceiros/${partnerSlug[1]}`,
+    '/tutoriais',
+    '/sobre'
 ]
 
 const athletesBiocubeSocial = {
@@ -65,8 +90,11 @@ const athletesBiocubeSocial = {
 export {
     rootUrl,
     wcaApi,
+    storeWebsite,
     CNPJ,
     athletesId_WCA,
     partnerSlug,
+    appRoutesAbsolutePath,
+    appRoutesPath,
     athletesBiocubeSocial
 }
