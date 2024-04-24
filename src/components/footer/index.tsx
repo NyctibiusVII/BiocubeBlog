@@ -1,9 +1,13 @@
 'use client'
 
-import { CNPJ } from '@/biocube-data'
+import { CNPJ, appRoutesPath } from '@/biocube-data'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 
 export const Footer = () => {
+    const router = usePathname()
+    if(!appRoutesPath.includes(router)) return <></>
+
     const currentYear = new Date().getFullYear()
 
     const scrollToTop = () => {
