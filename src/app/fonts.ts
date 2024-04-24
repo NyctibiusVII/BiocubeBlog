@@ -1,6 +1,7 @@
 import {
     Advent_Pro,
     Quattrocento,
+    Big_Shoulders_Text,
     Passion_One
 } from 'next/font/google'
 
@@ -12,6 +13,10 @@ const quattrocento = Quattrocento({
     subsets: ['latin'],
     weight: ['400']
 })
+const BigShouldersText = Big_Shoulders_Text({
+    subsets: ['latin'],
+    weight: ['400', '600', '700']
+})
 const passionOne = Passion_One({
     subsets: ['latin'],
     weight: ['400']
@@ -20,5 +25,6 @@ const passionOne = Passion_One({
 export {
     adventPro,
     quattrocento,
+    BigShouldersText,
     passionOne
 }
