@@ -1,4 +1,5 @@
 import { tutorialMetadata, tutorialStructuredData } from '@/biocube-seo'
+import { Background } from '@/components/background'
 import Head from 'next/head'
 
 export const metadata = tutorialMetadata
@@ -13,6 +14,7 @@ export default function Tutorial() {
                 />
             </Head>
 
+            <Background type='top' />
 
             <main className='flex'>
                 tutorial

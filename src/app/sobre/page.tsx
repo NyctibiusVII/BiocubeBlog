@@ -1,4 +1,5 @@
 import { aboutMetadata, organizationStructuredData } from '@/biocube-seo'
+import { Background } from '@/components/background'
 import Head from 'next/head'
 
 export const metadata = aboutMetadata
@@ -13,6 +14,7 @@ export default function About() {
                 />
             </Head>
 
+            <Background type='left' />
 
             <main className='flex'>
                 sobre

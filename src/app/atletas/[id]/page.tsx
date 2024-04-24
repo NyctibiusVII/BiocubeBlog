@@ -1,9 +1,10 @@
+import type { GenerateMetadataProps, ProfileParamsProps } from '@/types'
+import { getAthleteProfileStructuredData, getWcaProfile } from '@/app/actions'
+import { athletesId_WCA, rootUrl } from '@/biocube-data'
+import { Background } from '@/components/background'
 import { use } from 'react'
 import { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getAthleteProfileStructuredData, getWcaProfile } from '@/app/actions'
-import { athletesId_WCA, rootUrl } from '@/biocube-data'
-import { GenerateMetadataProps, ProfileParamsProps } from '@/types'
 import Head from 'next/head'
 
 export default function AthleteProfile({ params }: ProfileParamsProps) {
@@ -21,6 +22,8 @@ export default function AthleteProfile({ params }: ProfileParamsProps) {
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
                 />
             </Head>
+
+            <Background type='top' />
 
             <div>Atleta {wcaId}</div>
         </>

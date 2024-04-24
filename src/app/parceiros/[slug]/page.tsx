@@ -1,7 +1,8 @@
-import { notFound } from 'next/navigation'
+import type { PartnerParamsProps } from '@/types'
 import { partnerMetadata } from '@/biocube-seo'
-import { PartnerParamsProps } from '@/types'
 import { partnerSlug } from '@/biocube-data'
+import { Background } from '@/components/background'
+import { notFound } from 'next/navigation'
 
 export const metadata = partnerMetadata
 
@@ -11,6 +12,7 @@ export default function Partner({ params }: PartnerParamsProps) {
 
     return (
         <>
+            <Background type='top' />
             <div>parceiro {slug}</div>
         </>
     )
