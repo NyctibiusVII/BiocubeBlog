@@ -1,6 +1,7 @@
 'use client'
 
 import { CNPJ, appRoutesPath } from '@/biocube-data'
+import { MarkText } from '../mark-text'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 
@@ -30,7 +31,7 @@ export const Footer = () => {
                 />
 
                 <small className='text-sm text-white-75p flex flex-col sm:flex-row md:text-base'>
-                    <span><span className='mark-text'>BIOCUBE</span> - CNPJ: {CNPJ}.&nbsp;</span>
+                    <span><MarkText>BIOCUBE</MarkText> - CNPJ: {CNPJ}.&nbsp;</span>
                     <span>&copy; Todos os direitos reservados. 2019 - {currentYear}</span>
                 </small>
 
