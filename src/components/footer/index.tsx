@@ -21,7 +21,7 @@ export const Footer = () => {
         <footer className='w-full border-t border-leafgreen flex justify-center'>
             <div className='container'>
                 <Image
-                    className='hidden lg:inline-flex'
+                    className='hidden lg:inline-flex select-none'
                     src='favicon.svg'
                     width={24}
                     height={24}
@@ -30,7 +30,7 @@ export const Footer = () => {
                 />
 
                 <small className='text-sm text-white-75p flex flex-col sm:flex-row md:text-base'>
-                    <span><span className='text-leafgreen'>BIOCUBE</span> - CNPJ: {CNPJ}.&nbsp;</span>
+                    <span><span className='mark-text'>BIOCUBE</span> - CNPJ: {CNPJ}.&nbsp;</span>
                     <span>&copy; Todos os direitos reservados. 2019 - {currentYear}</span>
                 </small>
 

@@ -16,7 +16,7 @@ export const Header = () => {
 
     return (
         <header>
-            <p className={`${quattrocento.className} text-leafgreen md:text-xl flex gap-1 pointer-events-none`}>
+            <p className={`${quattrocento.className} text-leafgreen md:text-xl flex gap-1 select-none pointer-events-none`}>
                 <Image
                     className='w-5 h-5 md:w-6 md:h-6'
                     src='/favicon.svg'
