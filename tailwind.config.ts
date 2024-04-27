@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 const config: Config = {
   content: [
@@ -40,6 +41,10 @@ const config: Config = {
       'purple-shock': '#9747FF',
       'glacier-white-75p': '#ECF0F9BF',
       'glacier-white': '#ECF0F9'
+    },
+    screens: {
+      'xs': '475px',
+      ...defaultTheme.screens
     },
     extend: {
       maxWidth: {

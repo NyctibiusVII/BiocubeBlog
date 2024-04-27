@@ -3,6 +3,9 @@ import { PARTNER_SLUG, WCA_ID } from './types'
 const rootUrl = 'https://biocube.vercel.app' || 'https://biocube.com'
 const wcaApi = 'https://raw.githubusercontent.com/robiningelbrecht/wca-rest-api/master/api'
 const storeWebsite = 'https://www.biocubeoficial.com.br'
+const instagramBiocube = 'https://www.instagram.com/biocubeoficial'
+const youtubeBiocube = 'https://www.youtube.com/biocubeoficial'
+const theCubicleWebsite = 'https://www.thecubicle.com'
 const CNPJ = '35.534.583/0001-15'
 
 const partnerSlug = [
@@ -91,6 +94,9 @@ export {
     rootUrl,
     wcaApi,
     storeWebsite,
+    instagramBiocube,
+    youtubeBiocube,
+    theCubicleWebsite,
     CNPJ,
     athletesId_WCA,
     partnerSlug,

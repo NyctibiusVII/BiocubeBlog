@@ -3,13 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-    body { @apply w-[calc(100vw_-_0.5rem)] h-screen bg-black-matt text-revell antialiased flex flex-col items-center justify-start }
+    body { @apply w-full h-screen bg-black-matt text-revell antialiased flex flex-col items-center justify-start }
     header,
     footer .container { @apply w-full p-4 md:px-32 flex items-center justify-between }
-
-header { @apply max-w-app-content }
-main { @apply w-full max-w-app-content px-4 md:px-32 }
-footer .container { @apply max-w-app-content }
+    header { @apply max-w-app-content }
+    main { @apply w-full max-w-app-content flex flex-col items-center gap-[5.625rem] xl:gap-40 px-4 xs:px-8 md:px-36 lg:px-40 py-12 md:py-20 lg:py-24 xl:py-32 }
+    footer .container { @apply max-w-app-content }
     p, span, input { @apply truncate }
 
     ::-webkit-scrollbar            { @apply w-2 }
@@ -21,5 +20,9 @@ footer .container { @apply max-w-app-content }
 }
 
 @layer utilities {
+    .debug * { @apply border border-salamander }
+    .mark-text { @apply text-leafgreen }
     .primary-button { @apply bg-leafgreen font-bold text-quantum rounded-sm border-2 border-leafgreen transition-all hover:bg-transparent hover:text-leafgreen }
+    .primary-social-button { @apply bg-leafgreen font-bold text-quantum hover:bg-transparent hover:text-leafgreen }
+    .filter-leafgreen { filter: brightness(0) saturate(100%) invert(67%) sepia(96%) saturate(881%) hue-rotate(88deg) brightness(95%) contrast(103%); }
 }

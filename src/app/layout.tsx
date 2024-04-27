@@ -136,7 +136,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang='pt-BR'>
-            <body className={`w-screen h-screen ${adventPro.className} flex flex-col items-center justify-start`} suppressHydrationWarning={suppressHydrationWarning}>
+            <body className={adventPro.className} suppressHydrationWarning={suppressHydrationWarning}>
                 <Header />
                 {children}
                 <Footer />
