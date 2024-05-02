@@ -102,3 +102,18 @@ export type MenuItensType = {
     href: string
     content: APP_ROUTES_NAME
 }
+
+/* -------------------------------------------------- */
+
+export type FormFallbackState = {
+    fallbackMessage: string
+    fallbackStatus: 'idle' | 'success' | 'error'
+}
+export type ContactFormData = {
+    firstName: string
+    lastName: string
+    email: string
+    phone: string
+    message: string
+    date: string
+}

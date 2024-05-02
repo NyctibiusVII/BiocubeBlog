@@ -1,5 +1,11 @@
 import type { Metadata } from 'next'
-import { rootUrl } from './biocube-data'
+import {
+    rootUrl,
+    storeWebsite,
+    facebookBiocube,
+    instagramBiocube,
+    youtubeBiocube
+} from './biocube-data'
 
 /* --- Static Metadata --- */
 const metaImages = [
@@ -226,10 +232,10 @@ const organizationStructuredData = {
     logo: `${rootUrl}/favicon.ico`,
     contentUrl: rootUrl,
     sameAs: [
-        'https://www.facebook.com/biocube',
-        'https://www.instagram.com/biocube',
-        'https://www.twitter.com/biocube',
-        'https://www.youtube.com/biocube'
+        facebookBiocube,
+        instagramBiocube,
+        storeWebsite,
+        youtubeBiocube
     ]
 }
 const tutorialStructuredData =  {

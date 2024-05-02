@@ -1,11 +1,15 @@
 import { PARTNER_SLUG, WCA_ID } from './types'
 
 const rootUrl = 'https://biocube.vercel.app' || 'https://biocube.com'
-const wcaApi = 'https://raw.githubusercontent.com/robiningelbrecht/wca-rest-api/master/api'
-const storeWebsite = 'https://www.biocubeoficial.com.br'
-const instagramBiocube = 'https://www.instagram.com/biocubeoficial'
-const youtubeBiocube = 'https://www.youtube.com/biocubeoficial'
+const wcaApi  = 'https://raw.githubusercontent.com/robiningelbrecht/wca-rest-api/master/api'
+
+const storeWebsite      = 'https://www.biocubeoficial.com.br'
+const instagramBiocube  = 'https://www.instagram.com/biocubeoficial'
+const facebookBiocube   = 'https://www.facebook.com/biocubeoficial'
+const youtubeBiocube    = 'https://www.youtube.com/biocubeoficial'
 const theCubicleWebsite = 'https://www.thecubicle.com'
+
+const emailBiocube = 'matheus.dev.07@gmail.com' || 'tiagoffdias@hotmail.com'
 const CNPJ = '35.534.583/0001-15'
 
 const partnerSlug = [
@@ -95,8 +99,10 @@ export {
     wcaApi,
     storeWebsite,
     instagramBiocube,
+    facebookBiocube,
     youtubeBiocube,
     theCubicleWebsite,
+    emailBiocube,
     CNPJ,
     athletesId_WCA,
     partnerSlug,

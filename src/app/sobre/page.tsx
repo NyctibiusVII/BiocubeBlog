@@ -1,9 +1,10 @@
 import { aboutMetadata, organizationStructuredData } from '@/biocube-seo'
+import { ContactForm } from '@/components/contact-form'
 import { Background } from '@/components/background'
-import Image from 'next/image'
-import Head from 'next/head'
 import { MarkText } from '@/components/mark-text'
 import { BigShouldersText } from '../fonts'
+import Image from 'next/image'
+import Head from 'next/head'
 
 export const metadata = aboutMetadata
 
@@ -68,6 +69,10 @@ export default function About() {
                             alt='Foto do studio do Tiago, CEO da Biocube.'
                         />
                     </div>
+                </div>
+
+                <div className='w-full flex items-end lg:justify-between'>
+                    <ContactForm />
                 </div>
             </main>
         </>
