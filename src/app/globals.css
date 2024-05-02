@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    body { @apply w-full h-screen bg-black-matt text-revell antialiased flex flex-col items-center justify-start }
+    body { @apply w-full h-screen bg-black-matt text-revell antialiased selection:bg-[#2f497a]/75 selection:text-delta-lake flex flex-col items-center justify-start }
     header,
     footer .container { @apply w-full p-4 md:px-32 flex items-center justify-between }
     header { @apply max-w-app-content }
