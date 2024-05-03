@@ -56,7 +56,7 @@ export const ContactForm = () => {
                     <input type='email' id='email' name='email' autoComplete='email' minLength={5} maxLength={50} className='w-full bg-quantum text-base text-white/75 placeholder:text-white/25 border border-transparent border-t-white/5 sm:border-r-white/5 focus:border-white/15 outline-none py-2 px-4' placeholder='Email' required />
 
                     <label htmlFor='phone' className='sr-only'>Telefone</label>
-                    <input type='tel' id='phone' name='phone' autoComplete='tel-area-code' minLength={10} maxLength={11} className='w-full bg-quantum text-base text-white/75 placeholder:text-white/25 border border-transparent border-t-white/5 focus:border-white/15 outline-none py-2 px-4' placeholder='Telefone' required />
+                    <input type='tel' id='phone' name='phone' autoComplete='tel-national' minLength={10} maxLength={11} className='w-full bg-quantum text-base text-white/75 placeholder:text-white/25 border border-transparent border-t-white/5 focus:border-white/15 outline-none py-2 px-4' placeholder='Telefone' required />
                 </div>
 
                 <label htmlFor='message' className='sr-only'>Mensagem</label>

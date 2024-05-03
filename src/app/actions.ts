@@ -116,7 +116,11 @@ export const sendMessage = async (prevFallbackState: FormFallbackState, formData
         email: rawFormData.email,
         phone: rawFormData.phone,
         message: rawFormData.message,
-        date: new Intl.DateTimeFormat('pt-BR', { dateStyle: 'medium', timeStyle: 'medium' }).format(new Date())
+        date: new Intl.DateTimeFormat('pt-BR', {
+            dateStyle: 'long',
+            timeStyle: 'long',
+            timeZone: 'America/Sao_Paulo',
+        }).format(new Date())
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY)

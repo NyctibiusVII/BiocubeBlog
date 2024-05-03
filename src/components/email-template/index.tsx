@@ -77,15 +77,15 @@ export const EmailTemplate = (data: ContactFormData) => {
                 <Section style={footer}>
                     <Row>
                         <Column align='right' style={{ width: '45%', paddingRight: '8px' }}>
-                            <Img src={`${baseURL}/assets/instagram.svg`} />
+                            <Img src={`${baseURL}/assets/email/instagram-logo.png`} />
                         </Column>
 
                         <Column align='center' style={{ width: '10%', paddingRight: '4px', paddingLeft: '4px' }}>
-                            <Img src={`${baseURL}/assets/youtube.svg`} />
+                            <Img src={`${baseURL}/assets/email/youtube-logo.png`} />
                         </Column>
 
                         <Column align='left' style={{ width: '45%', paddingLeft: '8px' }}>
-                            <Img src={`${baseURL}/assets/the-cubicle.svg`} />
+                            <Img src={`${baseURL}/assets/email/the-cubicle-logo.png`} />
                         </Column>
                     </Row>
 
