@@ -1,8 +1,15 @@
-import type { Viewport, Metadata } from 'next'
+import type {
+    Viewport,
+    Metadata
+} from 'next'
+
 import { rootUrl } from '@/biocube-data'
+
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
+
 import { adventPro } from './fonts'
+
 import './globals.css'
 
 export const viewport: Viewport = {

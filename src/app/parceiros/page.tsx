@@ -1,6 +1,6 @@
 import { partnersMetadata } from '@/biocube-seo'
+
 import { Background } from '@/components/background'
-import Head from 'next/head'
 
 export const metadata = partnersMetadata
 

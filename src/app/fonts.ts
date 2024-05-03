@@ -1,30 +1,25 @@
-import {
-    Advent_Pro,
-    Quattrocento,
-    Big_Shoulders_Text,
-    Passion_One
-} from 'next/font/google'
+import localFont from 'next/font/local'
 
-const adventPro = Advent_Pro({
-    subsets: ['latin'],
-    weight: ['300', '400', '500', '600', '700']
-})
-const quattrocento = Quattrocento({
-    subsets: ['latin'],
-    weight: ['400']
-})
-const BigShouldersText = Big_Shoulders_Text({
-    subsets: ['latin'],
-    weight: ['400', '600', '700']
-})
-const passionOne = Passion_One({
-    subsets: ['latin'],
-    weight: ['400']
-})
+const adventPro = localFont({ src: '../../public/assets/fonts/AdventPro-VariableFont_wdth,wght.ttf' })
+const bigShouldersText = localFont({ src: '../../public/assets/fonts/BigShouldersText-VariableFont_wght.ttf' })
+const passionOne = localFont({ src: [
+    {
+        path: '../../public/assets/fonts/PassionOne-Regular.ttf',
+        weight: '400',
+        style: 'normal'
+    }
+] })
+const quattrocento = localFont({ src: [
+    {
+        path: '../../public/assets/fonts/Quattrocento-Regular.ttf',
+        weight: '400',
+        style: 'normal'
+    }
+] })
 
 export {
     adventPro,
-    quattrocento,
-    BigShouldersText,
-    passionOne
+    bigShouldersText,
+    passionOne,
+    quattrocento
 }

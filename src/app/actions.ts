@@ -1,10 +1,23 @@
 'use server'
 
-import type { ContactFormData, FormFallbackState, WCA_ID, WcaInfoType } from '@/types'
-import { athletesBiocubeSocial, emailBiocube, rootUrl, wcaApi } from '@/biocube-data'
+import type {
+    ContactFormData,
+    FormFallbackState,
+    WCA_ID,
+    WcaInfoType
+} from '@/types'
+
+import {
+    athletesBiocubeSocial,
+    emailBiocube,
+    rootUrl,
+    wcaApi
+} from '@/biocube-data'
+
 import { EmailTemplate } from '@/components/email-template'
+
 import { Resend } from 'resend'
-import { z } from 'zod'
+import { z }      from 'zod'
 
 /* -------------------------------------------------- */
 

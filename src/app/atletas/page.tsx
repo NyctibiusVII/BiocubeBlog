@@ -1,4 +1,5 @@
 import { athletesMetadata } from '@/biocube-seo'
+
 import { Background } from '@/components/background'
 
 export const metadata = athletesMetadata

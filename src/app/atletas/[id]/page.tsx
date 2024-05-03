@@ -1,10 +1,26 @@
-import type { GenerateMetadataProps, ProfileParamsProps } from '@/types'
-import { getAthleteProfileStructuredData, getWcaProfile } from '@/app/actions'
-import { athletesId_WCA, rootUrl } from '@/biocube-data'
+import type {
+    GenerateMetadataProps,
+    ProfileParamsProps
+} from '@/types'
+
+import {
+    getAthleteProfileStructuredData,
+    getWcaProfile
+} from '@/app/actions'
+import {
+    athletesId_WCA,
+    rootUrl
+} from '@/biocube-data'
+
 import { Background } from '@/components/background'
+
 import { use } from 'react'
-import { Metadata, ResolvingMetadata } from 'next'
+import {
+    Metadata,
+    ResolvingMetadata
+} from 'next'
 import { notFound } from 'next/navigation'
+
 import Head from 'next/head'
 
 export default function AthleteProfile({ params }: ProfileParamsProps) {

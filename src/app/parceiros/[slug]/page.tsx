@@ -1,7 +1,10 @@
 import type { PartnerParamsProps } from '@/types'
+
 import { partnerMetadata } from '@/biocube-seo'
-import { partnerSlug } from '@/biocube-data'
+import { partnerSlug }     from '@/biocube-data'
+
 import { Background } from '@/components/background'
+
 import { notFound } from 'next/navigation'
 
 export const metadata = partnerMetadata

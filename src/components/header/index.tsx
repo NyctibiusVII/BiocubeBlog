@@ -1,11 +1,17 @@
 'use client'
 
-import { appRoutesPath, storeWebsite } from '@/biocube-data'
-import { quattrocento } from '@/app/fonts'
-import { useHeaderLinks } from '@/hooks/useHeaderLinks'
-import { usePathname } from 'next/navigation'
+import {
+    appRoutesPath,
+    storeWebsite
+} from '@/biocube-data'
+
 import { PopoverMenu } from './popover-menu'
-import Image from 'next/image'
+
+import { quattrocento }   from '@/app/fonts'
+import { useHeaderLinks } from '@/hooks/useHeaderLinks'
+
+import { usePathname } from 'next/navigation'
+
 import Link from 'next/link'
 
 export const Header = () => {
@@ -16,17 +22,12 @@ export const Header = () => {
 
     return (
         <header>
-            <p className={`${quattrocento.className} text-leafgreen md:text-xl flex gap-1 select-none pointer-events-none`}>
-                <Image
-                    className='w-5 h-5 md:w-6 md:h-6'
-                    src='/favicon.svg'
-                    width={16}
-                    height={16}
-                    priority={false}
-                    alt='Biocube logo'
-                />
-                BIOCUBE
-            </p>
+            <div className='flex-center gap-2 select-none pointer-events-none'>
+                <span className='w-6 h-6 bg-[url("/favicon.svg")] bg-no-repeat bg-center bg-cover md:mb-1 hidden sm:inline-block' />
+                <p className={`${quattrocento.className} text-leafgreen text-2xl sm:hidden md:inline-block`}>
+                    BIOCUBE
+                </p>
+            </div>
 
             <PopoverMenu routerPath={router} headerLinks={headerLinks} />
 
@@ -36,7 +37,7 @@ export const Header = () => {
                         const activeRouter = menuRouter.href === router ? 'text-leafgreen underline' : 'text-white-50p hover:underline'
                         return (
                             <li key={index}>
-                                <Link href={menuRouter.href} className={`${activeRouter} lg:text-xl text-pretty underline-offset-4`}>
+                                <Link href={menuRouter.href} className={`${activeRouter} text-lg lg:text-xl text-pretty underline-offset-4`}>
                                     {menuRouter.content}
                                 </Link>
                             </li>
@@ -47,7 +48,7 @@ export const Header = () => {
 
             <Link
                 href={storeWebsite}
-                className='hidden sm:inline-flex md:hidden lg:inline-flex primary-button lg:text-xl px-4 lg:px-8'>
+                className='text-lg lg:text-xl px-6 lg:px-8 primary-button hidden sm:inline-flex md:hidden lg:inline-flex'>
                 LOJA
             </Link>
         </header>

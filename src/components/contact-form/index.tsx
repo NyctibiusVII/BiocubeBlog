@@ -1,10 +1,16 @@
 'use client'
 
 import type { FormFallbackState } from '@/types'
-import { sendMessage } from '@/app/actions'
-import { BigShouldersText } from '@/app/fonts'
-import { useFormState, useFormStatus } from 'react-dom'
+
+import { sendMessage }      from '@/app/actions'
+import { bigShouldersText } from '@/app/fonts'
+
 import { useEffect } from 'react'
+import {
+    useFormState,
+    useFormStatus
+} from 'react-dom'
+
 import Image from 'next/image'
 
 const initialFallbackState: FormFallbackState = {
@@ -35,26 +41,26 @@ export const ContactForm = () => {
     return (
         <>
             <form id='form-contact' action={formAction} method='POST' className='w-full min-w-72 lg:max-w-[30rem] xl:max-w-[40rem] mb-12 md:mb-4 lg:mb-0 relative flex flex-col'>
-                <legend className={`${BigShouldersText.className} uppercase text-2xl xs:text-3xl sm:text-4xl lg:text-5xl mb-4`}>Entre em contato conosco</legend>
+                <legend className={`${bigShouldersText.className} uppercase text-center xs:text-left text-3xl sm:text-4xl lg:text-5xl mb-4`}>Entre em contato conosco</legend>
 
-                <div className='flex rounded-t-sm overflow-hidden'>
+                <div className='sm:flex rounded-t-sm overflow-hidden'>
                     <label htmlFor='first-name' className='sr-only'>Primeiro Nome</label>
-                    <input type='text' id='first-name' name='first-name' minLength={3} maxLength={10} className='w-full bg-quantum text-sm xs:text-base text-white/75 placeholder:text-white/25 border border-transparent border-r-white/5 focus:border-white/15 outline-none py-1 px-4' placeholder='Primeiro Nome' required />
+                    <input type='text' id='first-name' name='first-name' autoComplete='given-name' minLength={3} maxLength={10} className='w-full bg-quantum text-base text-white/75 placeholder:text-white/25 border border-transparent sm:border-r-white/5 focus:border-white/15 outline-none py-2 px-4' placeholder='Primeiro Nome' required />
 
                     <label htmlFor='last-name' className='sr-only'>Sobrenome</label>
-                    <input type='text' id='last-name' name='last-name' minLength={3} maxLength={10} className='w-full bg-quantum text-sm xs:text-base text-white/75 placeholder:text-white/25 border border-transparent focus:border-white/15 outline-none py-1 px-4' placeholder='Sobrenome' required />
+                    <input type='text' id='last-name' name='last-name' autoComplete='family-name' minLength={3} maxLength={10} className='w-full bg-quantum text-base text-white/75 placeholder:text-white/25 border border-transparent border-t-white/5 sm:border-t-transparent focus:border-white/15 outline-none py-2 px-4' placeholder='Sobrenome' required />
                 </div>
 
-                <div className='flex'>
+                <div className='sm:flex'>
                     <label htmlFor='email' className='sr-only'>Email</label>
-                    <input type='email' id='email' name='email' autoComplete='email' minLength={5} maxLength={50} className='w-full bg-quantum text-sm xs:text-base text-white/75 placeholder:text-white/25 border border-transparent border-t-white/5 border-r-white/5 focus:border-white/15 outline-none py-1 px-4' placeholder='Email' required />
+                    <input type='email' id='email' name='email' autoComplete='email' minLength={5} maxLength={50} className='w-full bg-quantum text-base text-white/75 placeholder:text-white/25 border border-transparent border-t-white/5 sm:border-r-white/5 focus:border-white/15 outline-none py-2 px-4' placeholder='Email' required />
 
                     <label htmlFor='phone' className='sr-only'>Telefone</label>
-                    <input type='tel' id='phone' name='phone' minLength={10} maxLength={11} className='w-full bg-quantum text-sm xs:text-base text-white/75 placeholder:text-white/25 border border-transparent border-t-white/5 focus:border-white/15 outline-none py-1 px-4' placeholder='Telefone' required />
+                    <input type='tel' id='phone' name='phone' autoComplete='tel-area-code' minLength={10} maxLength={11} className='w-full bg-quantum text-base text-white/75 placeholder:text-white/25 border border-transparent border-t-white/5 focus:border-white/15 outline-none py-2 px-4' placeholder='Telefone' required />
                 </div>
 
                 <label htmlFor='message' className='sr-only'>Mensagem</label>
-                <textarea id='message' name='message' autoComplete='off' minLength={10} maxLength={600} className='w-full max-h-32 min-h-16 h-24 xl:h-32 bg-quantum text-sm xs:text-base text-white/75 placeholder:text-white/25 border border-transparent border-t-white/5 focus:border-white/15 outline-none py-1 px-4 resize-y' placeholder='Digite sua mensagem aqui...' required />
+                <textarea id='message' name='message' autoComplete='off' minLength={10} maxLength={600} className='w-full max-h-32 h-32 min-h-16 sm:h-24 xl:h-32 bg-quantum text-base text-white/75 placeholder:text-white/25 border border-transparent border-t-white/5 focus:border-white/15 outline-none py-2 px-4 resize-y' placeholder='Digite sua mensagem aqui...' required />
 
                 <SubmitButton />
 
@@ -73,7 +79,8 @@ export const ContactForm = () => {
                 width={310}
                 height={307}
                 priority={false}
-                alt=''
+                role='presentation'
+                alt='Cube cover temático da Biocube com um envelope de email sendo entregue por uma pata de coelho.'
             />
         </>
     )
@@ -86,17 +93,10 @@ const SubmitButton = () => {
         <button
             type='submit'
             disabled={pending}
-            className='w-full text-sm xs:text-base primary-button group !rounded-t-none disabled:bg-lawngreen disabled:border-lawngreen disabled:hover:text-lawngreen disabled:hover:cursor-not-allowed disabled:hover:bg-transparent flex items-center justify-center gap-2'>
+            className='w-full text-base primary-button group !rounded-t-none disabled:bg-lawngreen disabled:border-lawngreen disabled:hover:text-lawngreen disabled:hover:cursor-not-allowed disabled:hover:bg-transparent py-1 flex items-center justify-center gap-2'>
             { pending ?
                 <>
-                    <Image
-                        className='w-4 h-4 animate-spin brightness-0 group-hover:filter-none delay-75'
-                        src='/assets/loader.svg'
-                        width={24}
-                        height={24}
-                        priority={false}
-                        alt=''
-                    />
+                    <span className='w-4 h-4 bg-[url("/assets/loader.svg")] bg-no-repeat bg-center bg-cover animate-spin brightness-0 group-hover:filter-none delay-75' />
                     ENVIANDO
                 </>
             :

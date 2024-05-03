@@ -1,5 +1,9 @@
 import type { ContactFormData } from '@/types'
-import { rootUrl } from '@/biocube-data'
+
+import {
+    rootUrl as baseURL
+} from '@/biocube-data'
+
 import {
     Body,
     Container,
@@ -14,9 +18,6 @@ import {
     Text,
 } from '@react-email/components'
 
-const ENVIRONMENT = process.env.ENVIRONMENT || 'product'
-const baseURL = ENVIRONMENT === 'product' ? rootUrl : 'http://localhost:3000'
-
 export const EmailTemplate = (data: ContactFormData) => {
     const { firstName, lastName, email, phone, message, date } = data
 
@@ -27,8 +28,8 @@ export const EmailTemplate = (data: ContactFormData) => {
 
             <Body style={main}>
                 <Container style={container}>
-                    <Section style={logo}>
-                        <Img width={96} src={`${baseURL}/favicon-96x96.png`} />
+                    <Section style={{ padding: '20px' }}>
+                        <Img width={96} height={96} src={`${baseURL}/favicon-96x96.png`} style={logo} />
                     </Section>
 
                     <Section style={sectionsBorders}>
@@ -109,10 +110,7 @@ const main = {
 }
 
 const logo = {
-    padding: 20,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
+    margin: '0 auto'
 }
 const heading = {
     color: '#ECF0F9',
