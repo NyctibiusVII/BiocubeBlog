@@ -33,6 +33,7 @@
     .mark-text { @apply text-leafgreen }
     .flex-center { @apply flex items-center justify-center }
     .primary-button { @apply bg-leafgreen font-bold text-quantum rounded-sm border-2 border-leafgreen transition-all hover:bg-transparent hover:text-leafgreen }
+    .secondary-button { @apply bg-transparent font-bold text-leafgreen rounded-sm border-2 border-leafgreen transition-all hover:bg-leafgreen hover:text-quantum }
     .primary-social-button { @apply bg-leafgreen font-bold text-quantum hover:bg-transparent hover:text-leafgreen }
     .filter-leafgreen { filter: brightness(0) saturate(100%) invert(67%) sepia(96%) saturate(881%) hue-rotate(88deg) brightness(95%) contrast(103%); }
 }
