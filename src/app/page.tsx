@@ -47,7 +47,6 @@ export default function Home() {
                         width={281}
                         height={323}
                         priority
-                        role='presentation'
                         alt='Cubo mágico temático da Biocube.'
                     />
                 </div>

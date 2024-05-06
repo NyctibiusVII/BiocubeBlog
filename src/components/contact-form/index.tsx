@@ -79,7 +79,6 @@ export const ContactForm = () => {
                 width={310}
                 height={307}
                 priority={false}
-                role='presentation'
                 alt='Cube cover temático da Biocube com um envelope de email sendo entregue por uma pata de coelho.'
             />
         </>
