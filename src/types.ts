@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image'
+
 type Modalities =
     | '222'
     | '333'
@@ -88,6 +90,13 @@ export enum WCA_ID {
 
 export type PartnerParamsProps = {
     params: { slug: PARTNER_SLUG }
+}
+export type PartnerContentProps = {
+    banner:      StaticImageData
+    bannerTitle: Array<string>
+    title:       string
+    paragraphs:  Array<string>
+    images:      Array<string>
 }
 export type ProfileParamsProps = {
     params: { id: WCA_ID }

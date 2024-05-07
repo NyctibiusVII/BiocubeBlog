@@ -33,7 +33,7 @@ export default function Partners() {
                             height={311}
                             placeholder='blur'
                             priority={false}
-                            alt='Banner da Bodocó, parceira da Biocube.'
+                            alt='Banner do Bodocó, parceiro da Biocube.'
                         />
                         <Image
                             className='w-14 h-14 sm:w-[4.25rem] sm:h-[4.25rem] md:w-20 md:h-20 lg:w-24 lg:h-24 outline outline-1 lg:outline-2 outline-glacier-white rounded-full'
@@ -42,7 +42,7 @@ export default function Partners() {
                             height={311}
                             placeholder='blur'
                             priority={false}
-                            alt='Logo da Macaé, parceira da Biocube.'
+                            alt='Logo do Macaé, parceiro da Biocube.'
                         />
                     </div>
                 </div>
