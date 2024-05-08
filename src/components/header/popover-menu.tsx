@@ -38,7 +38,7 @@ export const PopoverMenu = ({ routerPath, headerLinks }: { routerPath: string, h
                 <nav className='menu-items w-[calc(100%_+_4px)] hidden absolute top-[2.45rem] -left-[2px] overflow-hidden z-[60]'>
                     <ul className='w-full flex flex-col'>
                         { headerLinks.map((menuRouter, index) => {
-                            const activeRouter_link = menuRouter.href === routerPath ? 'text-quantum' : 'text-white-50p'
+                            const activeRouter_link = menuRouter.href === routerPath ? 'text-quantum' : 'text-white/75'
                             const activeRouter_container = menuRouter.href === routerPath ?
                                 index === headerLinks.length -1 ?
                                     'bg-leafgreen border-leafgreen hover:brightness-90 rounded-b-md' // Last active
@@ -46,12 +46,12 @@ export const PopoverMenu = ({ routerPath, headerLinks }: { routerPath: string, h
                                     'bg-leafgreen border-leafgreen hover:brightness-90' // Active
                                 :
                                 index === headerLinks.length -1 ?
-                                    'bg-black-matt border-b-2 border-white-50p hover:bg-quantum rounded-b-md pb-2' // Last inactive
+                                    'bg-black-matt border-b-2 border-white/75 hover:bg-quantum rounded-b-md pb-2' // Last inactive
                                     :
                                     index === 0 ?
-                                        'bg-black-matt border-white-50p hover:bg-quantum pt-2' // First inactive
+                                        'bg-black-matt border-white/75 hover:bg-quantum pt-2' // First inactive
                                         :
-                                        'bg-black-matt border-white-50p hover:bg-quantum' // Inactive
+                                        'bg-black-matt border-white/75 hover:bg-quantum' // Inactive
 
                             return (
                                 <li key={index} className={`border-x-2 ${activeRouter_container} flex-center py-1`}>

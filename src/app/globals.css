@@ -23,7 +23,7 @@
     ::-webkit-scrollbar            { @apply w-2 }
     ::-webkit-scrollbar:horizontal { @apply h-2 }
     ::-webkit-scrollbar,
-    ::-webkit-scrollbar:horizontal { @apply bg-black-16p rounded-sm }
+    ::-webkit-scrollbar:horizontal { @apply bg-black/15 rounded-sm }
     ::-webkit-scrollbar-thumb      { @apply bg-lawngreen rounded-sm }
     ::-webkit-scrollbar-corner     { @apply bg-transparent }
 }

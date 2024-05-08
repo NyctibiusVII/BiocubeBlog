@@ -34,7 +34,7 @@ export const Header = () => {
             <nav className='hidden sm:inline-flex md:hidden lg:inline-flex'>
                 <ul className='flex gap-4 xl:gap-8 2xl:gap-10'>
                     { headerLinks.map((menuRouter, index) => {
-                        const activeRouter = menuRouter.href === router ? 'text-leafgreen underline' : 'text-white-50p hover:underline'
+                        const activeRouter = menuRouter.href === router ? 'text-leafgreen underline' : 'text-white/75 hover:underline'
                         return (
                             <li key={index}>
                                 <Link href={menuRouter.href} className={`${activeRouter} text-lg lg:text-xl text-pretty underline-offset-4`}>

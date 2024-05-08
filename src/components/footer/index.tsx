@@ -27,7 +27,7 @@ export const Footer = () => {
             <div className='container'>
                 <span className='w-6 h-6 bg-[url("/favicon.svg")] bg-no-repeat bg-center bg-cover hidden lg:inline-flex select-none' />
 
-                <small className='text-sm text-white-75p flex flex-col sm:flex-row md:text-base'>
+                <small className='text-sm text-white/75 flex flex-col sm:flex-row md:text-base'>
                     <span><MarkText>BIOCUBE</MarkText> - CNPJ: {CNPJ}.&nbsp;</span>
                     <span>&copy; Todos os direitos reservados. 2019 - {currentYear}</span>
                 </small>
