@@ -37,3 +37,9 @@
     .primary-social-button { @apply bg-leafgreen font-bold text-quantum hover:bg-transparent hover:text-leafgreen }
     .filter-leafgreen { filter: brightness(0) saturate(100%) invert(67%) sepia(96%) saturate(881%) hue-rotate(88deg) brightness(95%) contrast(103%); }
 }
+
+@keyframes float {
+	0% { transform: translatey(0); }
+	50% { transform: translatey(-25%); }
+	100% { transform: translatey(0); }
+}
