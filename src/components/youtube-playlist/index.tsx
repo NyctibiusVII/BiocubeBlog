@@ -61,9 +61,9 @@ export const YoutubePlaylist = ({ apiKey, cubeTutorialImages }: YoutubePlaylistP
                         />
 
                         <div className='w-full flex-center flex-col gap-2'>
-                            <h3 className='w-full uppercase group-odd:text-left group-even:text-right font-medium text-wrap text-xl leading-6 md:text-2xl md:leading-7'>
+                            <h2 className='w-full uppercase group-odd:text-left group-even:text-right font-medium text-wrap text-xl leading-6 md:text-2xl md:leading-7'>
                                 {video.snippet.title}
-                            </h3>
+                            </h2>
                             <p className='w-full uppercase group-odd:text-left group-even:text-right text-white/75 text-wrap line-clamp-4 font-light text-sm leading-[1.125rem] md:text-base md:leading-5 md:line-clamp-2'>
                                 {video.snippet.description}
                             </p>
