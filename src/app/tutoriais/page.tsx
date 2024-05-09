@@ -10,12 +10,14 @@ import { MarkText }        from '@/components/mark-text'
 import { quattrocento } from '../fonts'
 
 import Image from 'next/image'
+import Link  from 'next/link'
 import Head  from 'next/head'
 
 export const metadata = tutorialMetadata
 
 export default function Tutorial() {
     const API_KEY = process.env.YOUTUBE_API_V3_KEY || ''
+    const channelId = 'UC5Fm57YxhlaRMkh6iGlhBqg'
     const cubeTutorialImages = [
         {
             src: '/assets/cube-tutorial/cube-white-cross.svg',
@@ -124,6 +126,43 @@ export default function Tutorial() {
                 </div>
 
                 <YoutubePlaylist apiKey={API_KEY} cubeTutorialImages={cubeTutorialImages} />
+
+                <Link href={`https://www.youtube.com/channel/${channelId}`} target='_blank' title='Ir para o canal da Suzane Coelho no Youtube.' className='w-full max-w-[90%] min-h-[3.75rem] outline outline-2 outline-revell/75 lg:outline-quantum hover:outline-hematite-soil shadow-[0_0_1rem_-0,5rem_#111111,inset_0_0_1rem_-0.5rem_#111111] my-24 flex-center relative group transition-all rounded-lg overflow-hidden'>
+                    <div className='w-full h-full flex-center justify-between gap-4 py-1 px-12 xl:px-16 backdrop-blur-lg group-hover:backdrop-blur-xl z-10'>
+                        <h3 className='sr-only'>Gostou!? Aprenda muito mais no canal do Youtube. @SuzaneCoelho</h3>
+                        <p className='w-full uppercase text-wrap text-center lg:text-left font-bold lg:font-medium text-sm leading-4 sm:text-base md:text-lg lg:text-xl sm:leading-5 md:leading-5 lg:leading-5'>
+                            <span className='lg:text-2xl'>eae, gostou!?</span>
+                            <br />
+                            Aprenda muito mais no canal do{' '}
+                            <MarkText color='red' className='inline-flex items-center'>
+                                Youtube
+                                <Image
+                                    className='w-4 h-4 md:w-5 md:h-5 ml-0.5 lg:ml-1'
+                                    src='/assets/link-external.svg'
+                                    width={24}
+                                    height={24}
+                                    priority={false}
+                                    alt='Ir para canal da Suzane Coelho no Youtube'
+                                />
+                            </MarkText>
+                            <br />
+                            <MarkText>@SuzaneCoelho</MarkText>
+                        </p>
+
+                        <Image
+                            className='w-[90px] h-[90px] xl:w-[120px] xl:h-[120px] hidden lg:inline-block border-2 border-hematite-soil group-hover:border-transparent transition-colors rounded-full'
+                            src='/assets/profiles/p_2016COEL04.png'
+                            width={120}
+                            height={120}
+                            priority={false}
+                            alt='Perfil da Suzane Coelho no Youtube'
+                        />
+                    </div>
+
+                    <span className='w-12 h-12 animate-[float_4s_ease-in-out_infinite,pulse_4s_ease-in-out_infinite] bg-hematite-soil rounded-full absolute top-4 left-12 z-0' />
+                    <span className='w-14 h-14 animate-[float_3s_ease-in-out_infinite,pulse_3s_ease-in-out_infinite] bg-lawngreen rounded-full absolute top-8 left-24 z-0' />
+                    <span className='w-20 h-20 animate-[float_3500ms_ease-in-out_infinite,pulse_3500ms_ease-in-out_infinite] bg-hematite-soil/75 hidden sm:inline-block rounded-full absolute top-1/2 right-24 z-0' />
+                </Link>
             </main>
         </>
     )
