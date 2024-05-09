@@ -3,16 +3,50 @@ import {
     tutorialStructuredData
 } from '@/biocube-seo'
 
-import { Background } from '@/components/background'
-import { MarkText }   from '@/components/mark-text'
+import { Background }      from '@/components/background'
+import { YoutubePlaylist } from '@/components/youtube-playlist'
+import { MarkText }        from '@/components/mark-text'
 
 import { quattrocento } from '../fonts'
 
-import Head from 'next/head'
+import Image from 'next/image'
+import Head  from 'next/head'
 
 export const metadata = tutorialMetadata
 
 export default function Tutorial() {
+    const API_KEY = process.env.YOUTUBE_API_V3_KEY || ''
+    const cubeTutorialImages = [
+        {
+            src: '/assets/cube-tutorial/cube-white-cross.svg',
+            alt: 'Ilustração da cruz branca no cubo mágico.'
+        },
+        {
+            src: '/assets/cube-tutorial/cube-white-corners.svg',
+            alt: 'Ilustração dos cantos brancos no cubo mágico.'
+        },
+        {
+            src: '/assets/cube-tutorial/cube-second-layer.svg',
+            alt: 'Ilustração da segunda camada no cubo mágico.'
+        },
+        {
+            src: '/assets/cube-tutorial/cube-yellow-cross.svg',
+            alt: 'Ilustração da cruz amarela no cubo mágico.'
+        },
+        {
+            src: '/assets/cube-tutorial/cube-yellow-edges.svg',
+            alt: 'Ilustração da face amarela no cubo mágico.'
+        },
+        {
+            src: '/assets/cube-tutorial/cube-yellow-corners.svg',
+            alt: 'Ilustração dos cantos amarelos no cubo mágico.'
+        },
+        {
+            src: '/assets/cube-tutorial/cube-orient-yellow-corners.svg',
+            alt: 'Ilustração da última orientação dos cantos amarelos no cubo mágico.'
+        }
+    ]
+
     return (
         <>
             <Head>
@@ -24,7 +58,7 @@ export default function Tutorial() {
 
             <Background type='top' />
 
-            <main>
+            <main className='sm:gap-32 lg:gap-40'>
                 <h1 className='sr-only'>Como Montar o Cubo Mágico</h1>
                 <div className='w-full flex-center flex-col gap-4 lg:gap-6'>
                     <p className={`${quattrocento.className} text-center text-wrap text-[2.1rem] leading-9 xs:text-4xl sm:text-[2.5rem] md:text-5xl lg:text-6xl`}>
@@ -38,7 +72,7 @@ export default function Tutorial() {
                         <MarkText>“</MarkText>Já se sentiu cansado de girar o cubo sem saber o que está fazendo<MarkText>?</MarkText> Será que algum dia você conseguirá resolver isso<MarkText>?</MarkText> É claro, com este tutorial, de nossa querida amiga <MarkText>Suzane Coelho</MarkText>, você aprenderá de forma prática a resolver o cubo em <MarkText color='current' className='text-wrap' underline>apenas alguns passos</MarkText>. Vamos à nossa jornada<MarkText>?</MarkText><MarkText>”</MarkText>
                     </p>
 
-                    <div className='flex flex-col items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 mt-4'>
+                    <div className='flex flex-col items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 mt-10'>
                         <span className='w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-[#3FA549] outline outline-[1px] sm:outline-[1px] md:outline-[2px] lg:outline-[2px] outline-[#3FA549] grid gap-[1px] sm:gap-[1px] md:gap-[2px] lg:gap-[2px] grid-cols-3 grid-rows-3 rotate-[315deg]'>
                             <span className='w-[7.333px] h-[7.333px] sm:w-[10px] sm:h-[10px] md:w-[12px] md:h-[12px] lg:w-[14.666px] lg:h-[14.666px] bg-[#D63B41] animate-[pulse_2900ms_ease-in-out_infinite]' />
                             <span className='w-[7.333px] h-[7.333px] sm:w-[10px] sm:h-[10px] md:w-[12px] md:h-[12px] lg:w-[14.666px] lg:h-[14.666px] bg-[#F8D835] animate-[pulse_1300ms_ease-in-out_infinite]' />
@@ -60,7 +94,36 @@ export default function Tutorial() {
                     </div>
                 </div>
 
-                {/* outros conteúdos */}
+                <div className='grid grid-cols-3 grid-rows-3 sm:hidden md:grid lg:hidden gap-4'>
+                    { cubeTutorialImages.map((cubeImage, index) => {
+                        if(cubeTutorialImages.length === index + 1) return (
+                            <div key={index} className='col-span-3 flex justify-center'>
+                                <Image
+                                    className='w-[3.75rem] h-[4.33rem] md:w-[5rem] md:h-[5.766rem]'
+                                    src={cubeImage.src}
+                                    width={222}
+                                    height={256}
+                                    priority={false}
+                                    alt={cubeImage.alt}
+                                />
+                            </div>
+                        )
+
+                        return (
+                            <Image
+                                key={index}
+                                className='w-[3.75rem] h-[4.33rem] md:w-[5rem] md:h-[5.766rem]'
+                                src={cubeImage.src}
+                                width={222}
+                                height={256}
+                                priority={false}
+                                alt={cubeImage.alt}
+                            />
+                        )
+                    }) }
+                </div>
+
+                <YoutubePlaylist apiKey={API_KEY} cubeTutorialImages={cubeTutorialImages} />
             </main>
         </>
     )

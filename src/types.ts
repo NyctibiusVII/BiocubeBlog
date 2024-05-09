@@ -1,5 +1,21 @@
 import { StaticImageData } from 'next/image'
 
+export type ApiVideosType = {
+    snippet: {
+        title: string
+        description: string
+        resourceId: {
+            videoId: string
+        }
+    }
+}
+export interface YoutubePlaylistProps {
+    apiKey: string
+    cubeTutorialImages: {
+        src: string
+        alt: string
+    }[]
+}
 type Modalities =
     | '222'
     | '333'
