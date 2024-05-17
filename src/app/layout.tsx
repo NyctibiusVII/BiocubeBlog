@@ -5,6 +5,8 @@ import type {
 
 import { rootUrl } from '@/biocube-data'
 
+import { SocialMediaModalProvider } from '@/contexts/social-media-modal-context'
+
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 
@@ -145,7 +147,9 @@ export default function RootLayout({
         <html lang='pt-BR'>
             <body className={adventPro.className} suppressHydrationWarning={suppressHydrationWarning}>
                 <Header />
-                {children}
+                <SocialMediaModalProvider>
+                    {children}
+                </SocialMediaModalProvider>
                 <Footer />
             </body>
         </html>

@@ -36,10 +36,15 @@
     .secondary-button { @apply bg-transparent font-bold text-leafgreen rounded-sm border-2 border-leafgreen transition-all hover:bg-leafgreen hover:text-quantum }
     .primary-social-button { @apply bg-leafgreen font-bold text-quantum hover:bg-transparent hover:text-leafgreen }
     .filter-leafgreen { filter: brightness(0) saturate(100%) invert(67%) sepia(96%) saturate(881%) hue-rotate(88deg) brightness(95%) contrast(103%); }
+    .text-color-animate { @apply bg-clip-text bg-purple-shock bg-gradient-to-r from-purple-shock via-leafgreen bg-[length:700%_700%] text-transparent animate-[color_5s_linear_infinite] }
 }
 
 @keyframes float {
 	0% { transform: translatey(0); }
 	50% { transform: translatey(-25%); }
 	100% { transform: translatey(0); }
+}
+@keyframes color {
+    from { background-position: 0% 50%; }
+    to { background-position: 100% 50%; }
 }

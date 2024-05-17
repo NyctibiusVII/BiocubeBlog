@@ -8,7 +8,7 @@ import type {
 } from '@/types'
 
 import {
-    athletesBiocubeSocial,
+    teamBiocubeInfo,
     emailBiocube,
     rootUrl,
     wcaApi
@@ -62,9 +62,9 @@ export async function getAthleteProfileStructuredData(wcaInfo: WcaInfoType) {
             image: `${rootUrl}/assets/profiles/p_${wcaInfoId}.png`,
             contentUrl: `${rootUrl}/atletas/${wcaInfoId}`,
             sameAs: [
-                athletesBiocubeSocial[wcaInfoId].youtube,
-                athletesBiocubeSocial[wcaInfoId].instagram,
-                athletesBiocubeSocial[wcaInfoId].wca
+                teamBiocubeInfo[wcaInfoId].social.youtube,
+                teamBiocubeInfo[wcaInfoId].social.instagram,
+                teamBiocubeInfo[wcaInfoId].social.wca
             ]
         }
     }

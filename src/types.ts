@@ -101,6 +101,11 @@ export enum WCA_ID {
     PEDRO_SASAKI     = '2022SASA03',
     AUGUSTO_KLAPPOTH = '2022KLAP01'
 }
+export enum BIOCUBE_ID {
+    MATEUS_MELO     = 'MateusMelo',
+    GUSTAVO_DULLENS = 'GustavoDullens',
+    VITOR_WAGNER    = 'VitorWagner'
+}
 
 /* -------------------------------------------------- */
 
@@ -117,6 +122,26 @@ export type PartnerContentProps = {
 export type ProfileParamsProps = {
     params: { id: WCA_ID }
 }
+export type ProfileCardContentProps = {
+    id:         WCA_ID | BIOCUBE_ID
+    name:       string
+    occupation: string
+    primaryColor:
+        | 'white'
+        | 'green'
+        | 'orange'
+        | 'purple'
+    isAthlete:  boolean
+    social: {
+        instagram?: string
+        youtube?:   string
+        wca?:       string
+        github?:    string
+    }
+}
+export interface ProfileCardProps {
+    info: ProfileCardContentProps
+}
 export interface GenerateMetadataProps extends ProfileParamsProps {
     searchParams: { [key: string]: string | string[] | undefined }
 }
@@ -126,6 +151,12 @@ export interface GenerateMetadataProps extends ProfileParamsProps {
 export type MenuItensType = {
     href: string
     content: APP_ROUTES_NAME
+}
+export type SocialMediaModalContent = {
+    instagram?: string
+    youtube?:   string
+    wca?:       string
+    github?:    string
 }
 
 /* -------------------------------------------------- */
