@@ -40,7 +40,7 @@ export const ContactForm = () => {
 
     return (
         <>
-            <form id='form-contact' action={formAction} method='POST' className='w-full min-w-72 lg:max-w-[30rem] xl:max-w-[40rem] mb-12 md:mb-4 lg:mb-0 relative flex flex-col'>
+            <form id='form-contact' action={formAction} className='w-full min-w-72 lg:max-w-[30rem] xl:max-w-[40rem] mb-12 md:mb-4 lg:mb-0 relative flex flex-col'>
                 <legend className={`${bigShouldersText.className} uppercase text-center xs:text-left text-3xl sm:text-4xl lg:text-5xl mb-4`}>Entre em contato conosco</legend>
 
                 <div className='sm:flex rounded-t-sm overflow-hidden'>

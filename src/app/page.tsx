@@ -91,7 +91,7 @@ export default function Home() {
                     </div>
 
                     <div className='w-full xl:max-w-80 border-2 border-t-0 border-leafgreen rounded-b-md flex overflow-hidden'>
-                        <Link href={storeWebsite} className={`w-full group primary-social-button ${bigShouldersText.className} font-bold md:text-xl lg:text-2xl py-1 flex items-center justify-center gap-1`}>
+                        <Link href={storeWebsite} className={`w-full group primary-social-button ${bigShouldersText.className} font-bold md:text-xl lg:text-2xl py-1 flex-center gap-1`}>
                             <span className='w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 bg-[url("/assets/bag.svg")] bg-no-repeat bg-center bg-cover group-hover:filter-leafgreen' />
                             LOJA BIOCUBE
                         </Link>

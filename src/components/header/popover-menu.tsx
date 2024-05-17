@@ -4,9 +4,9 @@ import Link from 'next/link'
 
 export const PopoverMenu = ({ routerPath, headerLinks }: { routerPath: string, headerLinks: Array<MenuItensType> }) => {
     const handleMenu = () => {
-        const menuOverlay = document.querySelector('.menu-overlay') as HTMLMenuElement
+        const menuOverlay = document.querySelector('.menu-overlay') as HTMLSpanElement
         const menuContainer = document.querySelector('.menu-container') as HTMLDivElement
-        const menuItems = document.querySelector('.menu-items') as HTMLSpanElement
+        const menuItems = document.querySelector('.menu-items') as HTMLMenuElement
 
         if (menuItems.classList.contains('hidden') && menuOverlay.classList.contains('hidden')) {
             menuOverlay.classList.remove('hidden')
