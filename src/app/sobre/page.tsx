@@ -9,9 +9,9 @@ import { MarkText }    from '@/components/mark-text'
 
 import { bigShouldersText } from '../fonts'
 
-import TiagoCEOImage         from '/public/assets/tiago-ceo.png'
-import DiversifiedCubesImage from '/public/assets/diversified-cubes.png'
-import TiagoStudioImage      from '/public/assets/tiago-s-studio.png'
+import CEOProfileImage       from '/public/assets/tiago/ceo-profile.png'
+import DiversifiedCubesImage from '/public/assets/tiago/company/diversified-cubes.png'
+import StudioImage           from '/public/assets/tiago/company/studio.png'
 
 import Head  from 'next/head'
 import Image from 'next/image'
@@ -35,7 +35,7 @@ export default function About() {
                 <div className='w-full flex justify-between'>
                     <Image
                         className='hidden sm:inline-block md:hidden lg:inline-block sm:w-44 sm:h-44 lg:w-60 lg:h-60 xl:w-[19.438rem] xl:h-[19.438rem] border-2 border-leafgreen/50 rounded-md lg:rounded-lg'
-                        src={TiagoCEOImage}
+                        src={CEOProfileImage}
                         width={311}
                         height={311}
                         placeholder='blur'
@@ -74,7 +74,7 @@ export default function About() {
                         </p>
                         <Image
                             className='w-64 lg:w-80 xl:w-[22.438rem] border-2 border-leafgreen/50 rounded-md lg:rounded-lg mt-2'
-                            src={TiagoStudioImage}
+                            src={StudioImage}
                             width={359}
                             height={180}
                             placeholder='blur'

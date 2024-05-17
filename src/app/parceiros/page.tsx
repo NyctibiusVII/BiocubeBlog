@@ -68,7 +68,7 @@ export default function Partners() {
 
                     <Link href='/parceiros/bodoco' className={`w-full sm:max-w-96 group secondary-button md:text-xl py-1 flex items-center justify-center gap-1`}>
                         LER MAIS
-                        <span className='w-5 h-5 md:w-[1.375rem] md:h-[1.375rem] bg-[url("/assets/book.svg")] bg-no-repeat bg-center bg-cover transition-all group-hover:brightness-0' />
+                        <span className='w-5 h-5 md:w-[1.375rem] md:h-[1.375rem] bg-[url("/assets/icons/book.svg")] bg-no-repeat bg-center bg-cover transition-all group-hover:brightness-0' />
                     </Link>
                 </div>
 
@@ -88,7 +88,7 @@ export default function Partners() {
 
                     <Link href='/parceiros/macae' className={`w-full sm:max-w-96 group secondary-button text-md lg:text-lg xl:text-xl py-1 flex items-center justify-center gap-1`}>
                         LER MAIS
-                        <span className='w-5 h-5 md:w-[1.375rem] md:h-[1.375rem] bg-[url("/assets/book.svg")] bg-no-repeat bg-center bg-cover transition-all group-hover:brightness-0' />
+                        <span className='w-5 h-5 md:w-[1.375rem] md:h-[1.375rem] bg-[url("/assets/icons/book.svg")] bg-no-repeat bg-center bg-cover transition-all group-hover:brightness-0' />
                     </Link>
                 </div>
             </main>

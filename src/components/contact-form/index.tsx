@@ -75,7 +75,7 @@ export const ContactForm = () => {
 
             <Image
                 className='hidden lg:inline-block w-60 xl:w-80 -mb-4 -mr-4 xl:-mb-8'
-                src='/assets/cube-box-mail.svg'
+                src='/assets/cube/cube-box-mail.svg'
                 width={310}
                 height={307}
                 priority={false}
@@ -95,7 +95,7 @@ const SubmitButton = () => {
             className='w-full text-base primary-button group !rounded-t-none disabled:bg-lawngreen disabled:border-lawngreen disabled:hover:text-lawngreen disabled:hover:cursor-not-allowed disabled:hover:bg-transparent py-1 flex items-center justify-center gap-2'>
             { pending ?
                 <>
-                    <span className='w-4 h-4 bg-[url("/assets/loader.svg")] bg-no-repeat bg-center bg-cover animate-spin brightness-0 group-hover:filter-none delay-75' />
+                    <span className='w-4 h-4 bg-[url("/assets/icons/loader.svg")] bg-no-repeat bg-center bg-cover animate-spin brightness-0 group-hover:filter-none delay-75' />
                     ENVIANDO
                 </>
             :

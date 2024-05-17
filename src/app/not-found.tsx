@@ -12,7 +12,7 @@ export default function NotFound() {
                 <span className='w-full h-1/2 bg-salamander/25 blur-2xl absolute inset-y-1/4 rotate-[26deg] rounded-full z-10' />
                 <Image
                     className='sm:hidden z-20'
-                    src='/assets/not_found_404_mobile.png'
+                    src='/assets/not-found-404-mobile.png'
                     width={263}
                     height={221}
                     priority
@@ -41,7 +41,7 @@ export default function NotFound() {
             />
             <Image
                 className='hidden fixed bottom-0 sm:inline-flex z-0'
-                src='/assets/not_found_404_desktop.png'
+                src='/assets/not-found-404-desktop.png'
                 width={600}
                 height={600}
                 priority
@@ -49,7 +49,7 @@ export default function NotFound() {
             />
             <Image
                 className='hidden fixed right-36 bottom-12 2xl:inline-flex z-0'
-                src='/assets/cube_support.svg'
+                src='/assets/cube/cube-support.svg'
                 width={276}
                 height={290}
                 priority={false}

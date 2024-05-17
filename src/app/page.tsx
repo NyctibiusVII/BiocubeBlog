@@ -14,8 +14,8 @@ import { MarkText }   from '@/components/mark-text'
 
 import { bigShouldersText } from './fonts'
 
-import TiagoFamilyImage     from '/public/assets/tiago-s-family.png'
-import CubeCollectionsImage from '/public/assets/cube-collections.png'
+import TiagoFamilyImage     from '/public/assets/tiago/family.png'
+import CubeCollectionsImage from '/public/assets/tiago/company/cube-collections.png'
 
 import Image from 'next/image'
 import Link  from 'next/link'
@@ -43,7 +43,7 @@ export default function Home() {
 
                     <Image
                         className='w-44 h-auto lg:w-auto hidden sm:inline-block md:hidden xl:inline-block xl:drop-shadow-[0_0_15rem_#01F26D] z-0'
-                        src='/assets/cube.svg'
+                        src='/assets/cube/cube-biocube.svg'
                         width={281}
                         height={323}
                         priority
@@ -68,9 +68,9 @@ export default function Home() {
                     </div>
 
                     <div className='w-full xl:max-w-80 border-2 border-t-0 border-leafgreen rounded-b-md flex overflow-hidden'>
-                        <Link href={instagramBiocube} title='Abrir o instagram da Biocube' className='w-full h-9 bg-[url("/assets/instagram.svg")] bg-auto bg-no-repeat bg-center primary-social-button hover:filter-leafgreen py-1 flex justify-center' />
-                        <Link href={youtubeBiocube} title='Abrir o youtube da Biocube' className='w-full h-9 bg-[url("/assets/youtube.svg")] bg-auto bg-no-repeat bg-center primary-social-button hover:filter-leafgreen py-1 flex justify-center' />
-                        <Link href={theCubicleWebsite} title='Abrir o site the cubicle' className='w-full h-9 bg-[url("/assets/the-cubicle.svg")] bg-auto bg-no-repeat bg-center primary-social-button py-1 hover:filter-leafgreen flex justify-center' />
+                        <Link href={instagramBiocube} title='Abrir o instagram da Biocube' className='w-full h-9 bg-[url("/assets/icons/social/instagram.svg")] bg-auto bg-no-repeat bg-center primary-social-button hover:filter-leafgreen py-1 flex justify-center' />
+                        <Link href={youtubeBiocube} title='Abrir o youtube da Biocube' className='w-full h-9 bg-[url("/assets/icons/social/youtube.svg")] bg-auto bg-no-repeat bg-center primary-social-button hover:filter-leafgreen py-1 flex justify-center' />
+                        <Link href={theCubicleWebsite} title='Abrir o site the cubicle' className='w-full h-9 bg-[url("/assets/icons/social/the-cubicle.svg")] bg-auto bg-no-repeat bg-center primary-social-button py-1 hover:filter-leafgreen flex justify-center' />
                     </div>
                 </div>
 
@@ -92,7 +92,7 @@ export default function Home() {
 
                     <div className='w-full xl:max-w-80 border-2 border-t-0 border-leafgreen rounded-b-md flex overflow-hidden'>
                         <Link href={storeWebsite} className={`w-full group primary-social-button ${bigShouldersText.className} font-bold md:text-xl lg:text-2xl py-1 flex-center gap-1`}>
-                            <span className='w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 bg-[url("/assets/bag.svg")] bg-no-repeat bg-center bg-cover group-hover:filter-leafgreen' />
+                            <span className='w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 bg-[url("/assets/icons/bag.svg")] bg-no-repeat bg-center bg-cover group-hover:filter-leafgreen' />
                             LOJA BIOCUBE
                         </Link>
                     </div>

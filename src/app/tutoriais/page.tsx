@@ -20,31 +20,31 @@ export default function Tutorial() {
     const channelId = 'UC5Fm57YxhlaRMkh6iGlhBqg'
     const cubeTutorialImages = [
         {
-            src: '/assets/cube-tutorial/cube-white-cross.svg',
+            src: '/assets/cube/tutorial/cube-white-cross.svg',
             alt: 'Ilustração da cruz branca no cubo mágico.'
         },
         {
-            src: '/assets/cube-tutorial/cube-white-corners.svg',
+            src: '/assets/cube/tutorial/cube-white-corners.svg',
             alt: 'Ilustração dos cantos brancos no cubo mágico.'
         },
         {
-            src: '/assets/cube-tutorial/cube-second-layer.svg',
+            src: '/assets/cube/tutorial/cube-second-layer.svg',
             alt: 'Ilustração da segunda camada no cubo mágico.'
         },
         {
-            src: '/assets/cube-tutorial/cube-yellow-cross.svg',
+            src: '/assets/cube/tutorial/cube-yellow-cross.svg',
             alt: 'Ilustração da cruz amarela no cubo mágico.'
         },
         {
-            src: '/assets/cube-tutorial/cube-yellow-edges.svg',
+            src: '/assets/cube/tutorial/cube-yellow-edges.svg',
             alt: 'Ilustração da face amarela no cubo mágico.'
         },
         {
-            src: '/assets/cube-tutorial/cube-yellow-corners.svg',
+            src: '/assets/cube/tutorial/cube-yellow-corners.svg',
             alt: 'Ilustração dos cantos amarelos no cubo mágico.'
         },
         {
-            src: '/assets/cube-tutorial/cube-orient-yellow-corners.svg',
+            src: '/assets/cube/tutorial/cube-orient-yellow-corners.svg',
             alt: 'Ilustração da última orientação dos cantos amarelos no cubo mágico.'
         }
     ]
@@ -138,7 +138,7 @@ export default function Tutorial() {
                                 Youtube
                                 <Image
                                     className='w-4 h-4 md:w-5 md:h-5 ml-0.5 lg:ml-1'
-                                    src='/assets/link-external.svg'
+                                    src='/assets/icons/link-external.svg'
                                     width={24}
                                     height={24}
                                     priority={false}
