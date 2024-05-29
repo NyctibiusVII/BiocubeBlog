@@ -31,15 +31,14 @@ export default function Athletes() {
 
                 <div className='w-full max-w-[770px] grid grid-cols-2 xs:grid-cols-3 sm:grid-rows-4 justify-items-center items-center gap-6 sm:gap-12'>
                     { teamBiocubeId.map(id => {
-                        const { name, occupation, social } = teamBiocubeInfo[id]
+                        const { name, occupation } = teamBiocubeInfo[id]
 
                         const profileInfo: ProfileCardContentProps = {
                             id,
                             name,
                             occupation,
                             primaryColor: occupation === 'CEO' ? 'purple' : occupation === 'Atleta Biocube' ? 'green' : occupation === 'Desenvolvedor Parceiro' ? 'orange' : 'white',
-                            isAthlete: occupation === 'CEO' || occupation === 'Atleta Biocube',
-                            social
+                            isAthlete: occupation === 'CEO' || occupation === 'Atleta Biocube'
                         }
 
                         return <ProfileCard key={id} info={profileInfo} />

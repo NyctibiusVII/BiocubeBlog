@@ -1,6 +1,9 @@
 'use client'
 
-import type { SocialMediaModalContent } from '@/types'
+import {
+    WCA_ID,
+    BIOCUBE_ID
+} from '@/types'
 
 import { SocialMediaModal } from '@/components/social-media-modal'
 
@@ -11,8 +14,8 @@ import {
 } from 'react'
 
 interface SocialMediaModalContextData {
-    hasSocialMedia:        SocialMediaModalContent
-    openSocialMediaModal:  (social: SocialMediaModalContent) => void
+    socialId:              WCA_ID | BIOCUBE_ID | ''
+    openSocialMediaModal:  (id: WCA_ID | BIOCUBE_ID) => void
     closeSocialMediaModal: () => void
 }
 interface SocialMediaModalProviderProps {
@@ -23,10 +26,10 @@ export const SocialMediaModalContext = createContext({} as SocialMediaModalConte
 
 export function SocialMediaModalProvider({ children }: SocialMediaModalProviderProps) {
     const [ isSocialMediaModalOpen, setIsSocialMediaModalOpen ] = useState(false)
-    const [ hasSocialMedia, setHasSocialMedia ] = useState<SocialMediaModalContent>({})
+    const [ socialId, setSocialId ] = useState<WCA_ID | BIOCUBE_ID | ''>('')
 
-    const openSocialMediaModal = (social: SocialMediaModalContent) => {
-        setHasSocialMedia(social)
+    const openSocialMediaModal = (id: WCA_ID | BIOCUBE_ID) => {
+        setSocialId(id)
         setIsSocialMediaModalOpen(true)
     }
     const closeSocialMediaModal = () => setIsSocialMediaModalOpen(false)
@@ -34,7 +37,7 @@ export function SocialMediaModalProvider({ children }: SocialMediaModalProviderP
     return (
         <SocialMediaModalContext.Provider
             value={{
-                hasSocialMedia,
+                socialId,
                 openSocialMediaModal,
                 closeSocialMediaModal
             }}

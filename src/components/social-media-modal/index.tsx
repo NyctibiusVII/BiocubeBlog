@@ -2,12 +2,14 @@
 
 import { SocialMediaModalContext } from '@/contexts/social-media-modal-context'
 
+import { SocialMediaButtons } from '../social-media-buttons'
+
 import { useContext } from 'react'
 
-import Link  from 'next/link'
-
 export const SocialMediaModal = () => {
-    const { hasSocialMedia, closeSocialMediaModal } = useContext(SocialMediaModalContext)
+    const { socialId: id, closeSocialMediaModal } = useContext(SocialMediaModalContext)
+
+    if (!id) return null
 
     return (
         <>
@@ -28,28 +30,14 @@ export const SocialMediaModal = () => {
                 <span className='w-full h-[1px] md:h-[2px] bg-quantum my-4 md:my-5 lg:my-6 block' />
 
                 <div className='w-full pt-1 md:pt-2 pb-2 flex justify-start gap-2 sm:gap-3 md:gap-4 overflow-x-scroll'>
-                    { Object.entries(hasSocialMedia).length ? (
-                        Object.entries(hasSocialMedia).map(([platform, link]) => {
-                            if (link) {
-                                const socialMediaLinkClassNames =
-                                    platform === 'youtube'  ? 'text-[#FF2400] border-[#FF2400BF] hover:border-[#FF2400] hover:shadow-[inset_0_0_1.5rem_-1rem_#FF2400]' :
-                                        platform === 'instagram' ? 'text-[#9747FF] border-[#9747FFBF] hover:border-[#9747FF] hover:shadow-[inset_0_0_1.5rem_-1rem_#9747FF]' :
-                                            platform === 'wca' ? 'text-[#FAD73D] border-[#FAD73DBF] hover:border-[#FAD73D] hover:shadow-[inset_0_0_1.5rem_-1rem_#FAD73D]' : 'text-[#ECF0F9] border-[#ECF0F9BF] hover:border-[#ECF0F9] hover:shadow-[inset_0_0_1.5rem_-1rem_#ECF0F9]'
-
-                                return (
-                                    <Link key={platform} href={link} target='_blank' className={`px-4 md:px-5 lg:px-6 border-2 ${socialMediaLinkClassNames} rounded-full capitalize font-bold md:text-xl lg:text-2xl flex-center transition-colors`}>
-                                        {platform}
-                                    </Link>
-                                )
-                            }
-
-                            return null
-                        })
-                    ) : (
-                        <div className='w-full h-fit bg-delta-lake/5 flex-center border-2 border-dashed border-delta-lake/75 p-8 rounded-md'>
-                            <p className='w-fit text-wrap text-center md:text-lg lg:text-xl text-glacier-white/50'>Sem redes sociais disponíveis!</p>
-                        </div>
-                    )}
+                    <SocialMediaButtons
+                        personId={id}
+                        fallback={
+                            <div className='w-full h-fit bg-delta-lake/5 flex-center border-2 border-dashed border-delta-lake/75 p-8 rounded-md'>
+                                <p className='w-fit text-wrap text-center md:text-lg lg:text-xl text-glacier-white/50'>Sem redes sociais disponíveis!</p>
+                            </div>
+                        }
+                    />
                 </div>
             </div>
         </>

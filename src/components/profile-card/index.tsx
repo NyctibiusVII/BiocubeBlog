@@ -1,10 +1,6 @@
 'use client'
 
-import {
-    type ProfileCardProps,
-    BIOCUBE_ID,
-    WCA_ID
-} from '@/types'
+import type { ProfileCardProps } from '@/types'
 
 import { SocialMediaModalContext } from '@/contexts/social-media-modal-context'
 
@@ -28,7 +24,7 @@ import Image from 'next/image'
 import Link  from 'next/link'
 
 export const ProfileCard = ({ info }: ProfileCardProps) => {
-    const { id, name, occupation, primaryColor, isAthlete, social } = info
+    const { id, name, occupation, primaryColor, isAthlete } = info
     const { openSocialMediaModal } = useContext(SocialMediaModalContext)
 
     const color =
@@ -96,7 +92,7 @@ export const ProfileCard = ({ info }: ProfileCardProps) => {
     (
 
         <button
-            onClick={() => openSocialMediaModal(social)}
+            onClick={() => openSocialMediaModal(id)}
             title='Ver redes sociais'
             className='w-fit min-w-[116px] relative md:min-w-[140px] flex flex-col gap-2 sm:gap-0 md:gap-4 lg:gap-0 pt-6 sm:pt-0 md:pt-6 lg:pt-0'
         >

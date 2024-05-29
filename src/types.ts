@@ -132,12 +132,6 @@ export type ProfileCardContentProps = {
         | 'orange'
         | 'purple'
     isAthlete:  boolean
-    social: {
-        instagram?: string
-        youtube?:   string
-        wca?:       string
-        github?:    string
-    }
 }
 export interface ProfileCardProps {
     info: ProfileCardContentProps
@@ -151,12 +145,6 @@ export interface GenerateMetadataProps extends ProfileParamsProps {
 export type MenuItensType = {
     href: string
     content: APP_ROUTES_NAME
-}
-export type SocialMediaModalContent = {
-    instagram?: string
-    youtube?:   string
-    wca?:       string
-    github?:    string
 }
 
 /* -------------------------------------------------- */
