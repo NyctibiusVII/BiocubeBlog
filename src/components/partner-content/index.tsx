@@ -1,13 +1,14 @@
 'use client'
 
 import {
-    PartnerContentProps,
+    type PartnerContentProps,
     PARTNER_SLUG
 } from '@/types'
 
 import { MarkText } from '@/components/mark-text'
 
 import { bigShouldersText } from '@/app/fonts'
+import { processText }      from '@/utils'
 
 import BodocoBannerImage from '/public/assets/partners/bodoco/banner.png'
 import MacaeLogoImage    from '/public/assets/partners/macae/logo.png'
@@ -61,16 +62,6 @@ export const PartnerContent = ({ slug }: { slug: PARTNER_SLUG }) => {
 
     if(!content) return null
 
-    const processString = (text: string) => {
-        const processedText = text
-        .replace(/_([^_]+)_/g, '<span style="text-decoration: underline; text-wrap: wrap;">$1</span>')
-        .replace(/\*([^*]+)\*/g, '<span style="color: #01F26D; text-wrap: wrap;">$1</span>')
-        .replace(/\n/g, '<br />')
-        .replace(/\t/g, '<br /><br />')
-
-        return processedText
-    }
-
     return (
         <>
             <div className='w-full flex justify-between'>
@@ -94,23 +85,23 @@ export const PartnerContent = ({ slug }: { slug: PARTNER_SLUG }) => {
                     <h1 className={`w-full ${bigShouldersText.className} uppercase text-3xl sm:text-4xl lg:text-5xl`}>{content.title}</h1>
 
                     <div className='w-full flex items-center justify-start lg:justify-between gap-8 xl:gap-4'>
-                        <p className={`w-full xl:max-w-[63%] ${bigShouldersText.className} uppercase text-wrap text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processString(content.paragraphs[0]) }} />
+                        <p className={`w-full xl:max-w-[63%] ${bigShouldersText.className} uppercase text-wrap text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processText(content.paragraphs[0]) }} />
 
                         <span className={`w-[12.5rem] h-[16.5rem] xl:w-[21.25rem] ${content.images[0]} bg-no-repeat bg-center bg-cover border border-leafgreen hidden sm:inline-block md:hidden lg:inline-block shadow-[-2rem_1rem_16rem_0_rgba(1,242,109,0.25)] rounded-lg`} />
                     </div>
 
-                    <p className={`w-full ${bigShouldersText.className} uppercase text-wrap text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processString(content.paragraphs[1]) }} />
+                    <p className={`w-full ${bigShouldersText.className} uppercase text-wrap text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processText(content.paragraphs[1]) }} />
                 </div>
             }
 
             { content.paragraphs.length >= 4 &&
                 <div className='w-full flex flex-col items-end gap-4'>
-                    <p className={`w-full ${bigShouldersText.className} uppercase text-wrap text-right text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processString(content.paragraphs[2]) }} />
+                    <p className={`w-full ${bigShouldersText.className} uppercase text-wrap text-right text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processText(content.paragraphs[2]) }} />
 
                     <div className='w-full flex items-center justify-end lg:justify-between gap-8 xl:gap-4'>
                         <span className={`w-[12.5rem] h-[16.5rem] xl:w-[21.25rem] ${content.images[1]} bg-no-repeat bg-center bg-cover border border-leafgreen hidden sm:inline-block md:hidden lg:inline-block rounded-lg`} />
 
-                        <p className={`w-full xl:max-w-[63%] ${bigShouldersText.className} uppercase text-wrap text-right text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processString(content.paragraphs[3]) }} />
+                        <p className={`w-full xl:max-w-[63%] ${bigShouldersText.className} uppercase text-wrap text-right text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processText(content.paragraphs[3]) }} />
                     </div>
                 </div>
             }
@@ -118,7 +109,7 @@ export const PartnerContent = ({ slug }: { slug: PARTNER_SLUG }) => {
             { content.paragraphs.length >= 5 &&
                 <div className='w-full flex flex-col gap-4'>
                     <div className='w-full flex items-center justify-start lg:justify-between gap-8 xl:gap-4'>
-                        <p className={`w-full xl:max-w-[63%] ${bigShouldersText.className} uppercase text-wrap text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processString(content.paragraphs[4]) }} />
+                        <p className={`w-full xl:max-w-[63%] ${bigShouldersText.className} uppercase text-wrap text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processText(content.paragraphs[4]) }} />
 
                         <span className={`w-[12.5rem] h-[16.5rem] xl:w-[21.25rem] ${content.images[2]} bg-no-repeat bg-center bg-cover border border-leafgreen hidden sm:inline-block md:hidden lg:inline-block shadow-[-2rem_1rem_16rem_0_rgba(1,242,109,0.25)] rounded-lg`} />
                     </div>
@@ -127,12 +118,12 @@ export const PartnerContent = ({ slug }: { slug: PARTNER_SLUG }) => {
 
             { content.paragraphs.length === 7 &&
                 <div className='w-full flex flex-col items-end gap-4'>
-                    <p className={`w-full ${bigShouldersText.className} uppercase text-wrap text-right text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processString(content.paragraphs[5]) }} />
+                    <p className={`w-full ${bigShouldersText.className} uppercase text-wrap text-right text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processText(content.paragraphs[5]) }} />
 
                     <div className='w-full flex items-center justify-end lg:justify-between gap-8 xl:gap-4'>
                         <span className={`w-[12.5rem] h-[16.5rem] xl:w-[21.25rem] ${content.images[3]} bg-no-repeat bg-center bg-cover border border-leafgreen hidden sm:inline-block md:hidden lg:inline-block rounded-lg`} />
 
-                        <p className={`w-full xl:max-w-[63%] ${bigShouldersText.className} uppercase text-wrap text-right text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processString(content.paragraphs[6]) }} />
+                        <p className={`w-full xl:max-w-[63%] ${bigShouldersText.className} uppercase text-wrap text-right text-lg leading-[1.375rem] sm:text-xl sm:leading-6 lg:text-2xl lg:leading-7`} dangerouslySetInnerHTML={{ __html: processText(content.paragraphs[6]) }} />
                     </div>
                 </div>
             }

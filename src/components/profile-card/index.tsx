@@ -3,20 +3,9 @@
 import type { ProfileCardProps } from '@/types'
 
 import { SocialMediaModalContext } from '@/contexts/social-media-modal-context'
+import { useProfileImages } from '@/hooks/useProfileImages'
 
 import { bigShouldersText } from '@/app/fonts'
-
-import TiagoDiasImage       from '/public/assets/profiles/p_2022DIAS04.png'
-import SusaneCoelhoImage    from '/public/assets/profiles/p_2016COEL04.png'
-import CaioSatoImage        from '/public/assets/profiles/p_2016SATO01.png'
-import MarioDiasImage       from '/public/assets/profiles/p_2019DIAS02.png'
-import PedroContreirasImage from '/public/assets/profiles/p_2022MOUR01.png'
-import MariaGarolaImage     from '/public/assets/profiles/p_2022LIMA01.png'
-import PedroSasakiImage     from '/public/assets/profiles/p_2022SASA03.png'
-import AugustoKlappothImage from '/public/assets/profiles/p_2022KLAP01.png'
-import MateusMeloImage      from '/public/assets/profiles/p_MateusMelo.png'
-import GustavoDullensImage  from '/public/assets/profiles/p_GustavoDullens.png'
-import VitorWagnerImage     from '/public/assets/profiles/p_VitorWagner.png'
 
 import { useContext } from 'react'
 
@@ -26,32 +15,19 @@ import Link  from 'next/link'
 export const ProfileCard = ({ info }: ProfileCardProps) => {
     const { id, name, occupation, primaryColor, isAthlete } = info
     const { openSocialMediaModal } = useContext(SocialMediaModalContext)
+    const { profileImageList } = useProfileImages()
 
     const color =
         primaryColor === 'green'  ? '#01F26D' :
             primaryColor === 'orange' ? '#FF8E26' :
                 primaryColor === 'purple' ? '#9747FF' : '#ECF0F9'
 
-    const selectImage = {
-        [WCA_ID.TIAGO_DIAS]:    TiagoDiasImage,
-        [WCA_ID.SUZANE_COELHO]: SusaneCoelhoImage,
-        [WCA_ID.CAIO_SATO]:     CaioSatoImage,
-        [WCA_ID.MARIO_DIAS]:    MarioDiasImage,
-        [WCA_ID.PEDRO_CONTREIRAS]: PedroContreirasImage,
-        [WCA_ID.MARIA_GAROLA]:     MariaGarolaImage,
-        [WCA_ID.PEDRO_SASAKI]:     PedroSasakiImage,
-        [WCA_ID.AUGUSTO_KLAPPOTH]: AugustoKlappothImage,
-        [BIOCUBE_ID.MATEUS_MELO]:  MateusMeloImage,
-        [BIOCUBE_ID.GUSTAVO_DULLENS]: GustavoDullensImage,
-        [BIOCUBE_ID.VITOR_WAGNER]:    VitorWagnerImage
-    }
-
     const CardContent = <>
         <div className='w-fit h-fit relative mx-auto rotate-45 sm:rotate-0 md:rotate-45 lg:rotate-0'>
             <div className='w-[70.71px] h-[70.71px] sm:w-full sm:h-fit md:w-[90px] md:h-[90px] lg:w-full lg:h-fit border-t-2 border-r-2 md:border-t-2 md:border-r-2 sm:border-0 lg:border-0  overflow-hidden' style={{ borderColor: color + 'BF' /* = 75% */ }}>
                 <Image
                     className='w-full h-full sm:w-[150px] sm:h-[150px] md:w-full md:h-full lg:w-[200px] lg:h-[200px] rounded-t-lg -rotate-45 sm:rotate-0 md:-rotate-45 lg:rotate-0 scale-150 sm:scale-100 md:scale-150 lg:scale-100'
-                    src={selectImage[id]}
+                    src={profileImageList[id]}
                     width={200}
                     height={200}
                     placeholder='blur'
