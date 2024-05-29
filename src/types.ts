@@ -16,7 +16,8 @@ export interface YoutubePlaylistProps {
         alt: string
     }[]
 }
-type Modalities =
+
+export type Modalities =
     | '222'
     | '333'
     | '444'
@@ -35,7 +36,6 @@ type Modalities =
     | '444bf'
     | '555bf'
     | '333mbf'
-    | '333mbo'
 type EventRound = {
     round: string
     position: number
@@ -44,10 +44,10 @@ type EventRound = {
     format: string
     solves: Array<number>
 }
-type RankingData = {
-    eventId: Modalities,
-    best: number,
-    rank: {
+export type RankingData = {
+    eventId?: Modalities,
+    best?: number,
+    rank?: {
         world: number,
         continent: number,
         country: number
@@ -75,6 +75,18 @@ export interface WcaInfoType {
         gold: number
         silver: number
         bronze: number
+    }
+    records: {
+        single: {
+            WR?: number
+            CR?: number
+            NR?: number
+        }
+        average: {
+            WR?: number
+            CR?: number
+            NR?: number
+        }
     }
 }
 

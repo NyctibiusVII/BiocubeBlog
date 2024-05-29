@@ -10,6 +10,11 @@
     main { @apply w-full max-w-app-content flex flex-col items-center gap-[5.625rem] xl:gap-40 px-4 xs:px-8 md:px-36 lg:px-40 py-12 md:py-20 lg:py-24 xl:py-32 }
     footer .container { @apply max-w-app-content }
     p, span, input { @apply truncate }
+    [data-rank='1'] { @apply text-moonmist font-normal }
+    [data-rank='2'] { @apply text-white font-normal }
+    [data-rank='3'] { @apply text-pumpkin font-normal }
+    [data-rank='4'], [data-rank='5'], [data-rank='6'],
+    [data-rank='7'], [data-rank='8'], [data-rank='9'], [data-rank='10'] { @apply text-white/75 }
 
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
@@ -37,6 +42,7 @@
     .primary-social-button { @apply bg-leafgreen font-bold text-quantum hover:bg-transparent hover:text-leafgreen }
     .filter-leafgreen { filter: brightness(0) saturate(100%) invert(67%) sepia(96%) saturate(881%) hue-rotate(88deg) brightness(95%) contrast(103%); }
     .text-color-animate { @apply bg-clip-text bg-purple-shock bg-gradient-to-r from-purple-shock via-leafgreen bg-[length:700%_700%] text-transparent animate-[color_5s_linear_infinite] }
+    .bg-color-animate { @apply bg-revell bg-gradient-to-r from-moonmist via-salamander/90 to-moonmist/75 bg-[length:700%_700%] animate-[color_2s_linear_infinite] }
 }
 
 @keyframes float {
