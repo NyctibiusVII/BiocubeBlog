@@ -6,5 +6,5 @@ export const Background = ({ type }: { type: 'top' | 'left' | 'right' }) => {
     }
     const classNameType = bgTypes[type] ?? 'hidden'
 
-    return <span className={`w-80 h-80 blur-[15rem] bg-leafgreen absolute ${classNameType} text-transparent rounded-full -z-50`} />
+    return <span className={`w-80 h-80 blur-[15rem] bg-leafgreen fixed ${classNameType} text-transparent rounded-full -z-50`} />
 }

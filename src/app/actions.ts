@@ -25,7 +25,7 @@ export async function getWcaProfile(wcaId: string) {
     const wcaInfo: WcaInfoType = await fetch(`${wcaApi}/persons/${wcaId}.json`, {
         method: 'GET',
         next: {
-            revalidate: 60 * 60 * 24 * 7 * 4 * 5 // 6 Months
+            revalidate: 60 * 60 * 24 // 24 hours
         }
     }).then(res => res.json())
 

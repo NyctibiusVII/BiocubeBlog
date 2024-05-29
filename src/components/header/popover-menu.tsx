@@ -30,7 +30,7 @@ export const PopoverMenu = ({ routerPath, headerLinks }: { routerPath: string, h
 
     return (
         <>
-            <span onClick={() => handleMenu()} className='menu-overlay w-full h-full bg-[#00000080] fixed top-0 left-0 hidden z-40' />
+            <span onClick={() => handleMenu()} className='menu-overlay w-full h-full bg-[#0000004d] backdrop-blur-[3px] fixed top-0 left-0 hidden z-40' />
 
             <div className='menu-container w-fit border-2 border-leafgreen flex items-center sm:hidden md:flex lg:hidden rounded-md relative transition-all z-50'>
                 <button onClick={() => handleMenu()} title='Botão abrir/fechar menu de links de navegação' className='w-12 h-[2.33rem] bg-[url("/assets/icons/menu.svg")] bg-no-repeat bg-center bg-auto border-r-2 border-leafgreen flex items-center justify-center focus:rounded-tl-[0.063rem] hover:bg-leafgreen focus:bg-leafgreen filter-leafgreen hover:filter-none focus:filter-none transition-all' />
