@@ -49,7 +49,7 @@ export const processWCARecords = {
         }
 
         if (rawTime <= 99) return `0.${rawTime}`
-        else if (rawTime <= 9999) {
+        else if (rawTime <= 60) {
             const seconds = Math.floor(rawTime / 100)
             const millesimal = formatZero(rawTime % 100)
 
@@ -59,7 +59,8 @@ export const processWCARecords = {
             const seconds = formatZero(Math.floor((rawTime % 6000) / 100))
             const millesimal = formatZero(rawTime % 100)
 
-            return `${minutes}:${seconds}.${millesimal}`
+            if (minutes === 0) return `${seconds}.${millesimal}`
+            else return `${minutes}:${seconds}.${millesimal}`
         }
     }
 }
