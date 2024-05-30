@@ -25,7 +25,7 @@ export const PersonalWCARecords = ({ infoRaw }: { infoRaw: WcaInfoType }) => {
             continentalRecord: (infoRaw.records.single.CR ?? 0) + (infoRaw.records.average.CR ?? 0) || '-',
             nationalRecord: (infoRaw.records.single.NR ?? 0) + (infoRaw.records.average.NR ?? 0) || '-'
         }
-        
+
         return { medals, sumRecords }
     }, [infoRaw.medals.bronze, infoRaw.medals.gold, infoRaw.medals.silver, infoRaw.records.average.CR, infoRaw.records.average.NR, infoRaw.records.average.WR, infoRaw.records.single.CR, infoRaw.records.single.NR, infoRaw.records.single.WR])
 
@@ -212,15 +212,15 @@ export const PersonalWCARecords = ({ infoRaw }: { infoRaw: WcaInfoType }) => {
                     <div className='w-fit bg-quantum font-light text-white/40 border border-t-0 border-white/10 px-10 pt-[6px] pb-1 flex-center gap-6 rounded-b-2xl sm:hidden'>
                         <div className='flex flex-col items-center'>
                             <p className='leading-5'>WR</p>
-                            <span className='text-sm'>{infoRaw.records.single.WR ?? '-'}</span>
+                            <span className='text-sm'>{wcaMedalsRecords.sumRecords.worldRecord}</span>
                         </div>
                         <div className='flex flex-col items-center'>
                             <p className='leading-5'>CR</p>
-                            <span className='text-sm'>{infoRaw.records.single.CR ?? '-'}</span>
+                            <span className='text-sm'>{wcaMedalsRecords.sumRecords.continentalRecord}</span>
                         </div>
                         <div className='flex flex-col items-center'>
                             <p className='leading-5'>NR</p>
-                            <span className='text-sm'>{infoRaw.records.single.NR ?? '-'}</span>
+                            <span className='text-sm'>{wcaMedalsRecords.sumRecords.nationalRecord}</span>
                         </div>
                     </div>
                 </div>
@@ -238,14 +238,14 @@ export const PersonalWCARecords = ({ infoRaw }: { infoRaw: WcaInfoType }) => {
                                 <th className='w-36 md:w-52 font-medium md:font-semibold text-left pl-8'>Evento</th>
 
                                 <th className='w-24 md:w-28 lg:w-32 text-right pr-4 font-medium md:font-semibold'>Tempo Único</th>
-                                <th className='w-10 md:w-12 font-medium md:font-semibold'>NR</th>
-                                <th className='w-10 md:w-12 font-medium md:font-semibold'>CR</th>
-                                <th className='w-10 md:w-12 font-medium md:font-semibold'>WR</th>
+                                <th className='w-10 md:w-12 font-medium md:font-semibold'><abbr title='Ranking Nacional - Tempo Único'>NR</abbr></th>
+                                <th className='w-10 md:w-12 font-medium md:font-semibold'><abbr title='Ranking Continental - Tempo Único'>CR</abbr></th>
+                                <th className='w-10 md:w-12 font-medium md:font-semibold'><abbr title='Ranking Mundial - Tempo Único'>WR</abbr></th>
 
                                 <th className='w-24 md:w-28 lg:w-32 text-right pr-4 font-medium md:font-semibold'>Média</th>
-                                <th className='w-10 md:w-12 font-medium md:font-semibold'>NR</th>
-                                <th className='w-10 md:w-12 font-medium md:font-semibold'>CR</th>
-                                <th className='w-10 md:w-12 font-medium md:font-semibold'>WR</th>
+                                <th className='w-10 md:w-12 font-medium md:font-semibold'><abbr title='Ranking Nacional - Média'>NR</abbr></th>
+                                <th className='w-10 md:w-12 font-medium md:font-semibold'><abbr title='Ranking Continental - Média'>CR</abbr></th>
+                                <th className='w-10 md:w-12 font-medium md:font-semibold'><abbr title='Ranking Mundial - Média'>WR</abbr></th>
                                 <th className='w-4'>&nbsp;</th>
                             </tr>
                         </thead>
