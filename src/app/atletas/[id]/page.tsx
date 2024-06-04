@@ -120,6 +120,14 @@ export async function generateMetadata(
             wcaId,
             wcaInfo.name
         ],
+        robots: {
+            index: true,
+            follow: true,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+            'max-video-preview': -1,
+            googleBot: 'index, follow'
+        },
         openGraph: {
             url: `${rootUrl}/atletas/${wcaId}`,
             title: `Biocube - Atleta ${wcaInfo.name}`,

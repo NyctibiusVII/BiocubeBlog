@@ -18,8 +18,6 @@ const metaImages = [
 ]
 
 const homeMetadata: Metadata = {
-    title: 'Biocube',
-    description: 'Biocube é um portal onde você irá encontrar nossos contatos, nossa loja e projetos sociais.',
     keywords: [
         'biocube',
         'cubo magico',
@@ -32,6 +30,14 @@ const homeMetadata: Metadata = {
         'atletas',
         'tutorial',
     ],
+    robots: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+        googleBot: 'index, follow'
+    },
     openGraph: {
         url: rootUrl,
         title: 'Biocube',
@@ -65,6 +71,14 @@ const athletesMetadata: Metadata = {
         'Augusto Klappoth',
         'wca'
     ],
+    robots: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+        googleBot: 'index, follow'
+    },
     openGraph: {
         url: `${rootUrl}/atletas`,
         title: 'Biocube - Atletas',
@@ -92,6 +106,14 @@ const partnersMetadata: Metadata = {
         'cubo mágico bodocó',
         'bodocó open 2019'
     ],
+    robots: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+        googleBot: 'index, follow'
+    },
     openGraph: {
         url: `${rootUrl}/parceiros`,
         title: 'Biocube - Parceiros',
@@ -115,6 +137,14 @@ const partnerMetadata: Metadata = {
         'projeto',
         'social'
     ],
+    robots: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+        googleBot: 'index, follow'
+    },
     openGraph: {
         url: `${rootUrl}/parceiro`,
         title: 'Biocube - Parceiros',
@@ -141,6 +171,14 @@ const tutorialMetadata: Metadata = {
         '3x3',
         'suzane coelho'
     ],
+    robots: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+        googleBot: 'index, follow'
+    },
     openGraph: {
         url: `${rootUrl}/tutoriais`,
         title: 'Biocube - Tutoriais',
@@ -171,6 +209,14 @@ const aboutMetadata: Metadata = {
         'blog',
         'tiago dias'
     ],
+    robots: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+        googleBot: 'index, follow'
+    },
     openGraph: {
         url: `${rootUrl}/sobre`,
         title: 'Biocube - Sobre nós',

@@ -20,6 +20,8 @@ export const viewport: Viewport = {
     themeColor: '#070707'
 }
 export const metadata: Metadata = {
+    title: 'Biocube',
+    description: 'Biocube é um portal onde você irá encontrar nossos contatos, nossa loja e projetos sociais.',
     metadataBase: new URL(rootUrl),
     openGraph: {
         siteName: 'Biocube',
@@ -32,12 +34,7 @@ export const metadata: Metadata = {
         site: '@NyctibiusVII'
     },
     robots: {
-        index: true,
-        follow: true,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-        'max-video-preview': -1,
-        googleBot: 'index, follow'
+        index: false // Default
     },
     applicationName: 'Biocube',
     appleWebApp: {
