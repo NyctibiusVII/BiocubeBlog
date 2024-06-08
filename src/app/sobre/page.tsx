@@ -28,9 +28,9 @@ export default function About() {
                 />
             </Head>
 
-            <Background type='left' />
-
             <main>
+                <Background type='left' />
+
                 <h1 className='sr-only'>Tiago Dias Ceo & Desenvolvedor</h1>
                 <div className='w-full flex justify-between'>
                     <Image

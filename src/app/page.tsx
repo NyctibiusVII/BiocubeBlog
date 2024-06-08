@@ -33,9 +33,9 @@ export default function Home() {
                 />
             </Head>
 
-            <Background type='right' />
-
             <main>
+                <Background type='right' />
+
                 <div className='w-full flex items-center justify-between gap-4 xl:gap-16'>
                     <h1 className={`${bigShouldersText.className} sm:max-w-[28rem] md:max-w-full xl:max-w-[38.75rem] font-normal text-[2.5rem] leading-[3rem] xs:text-[2.75rem] xs:leading-[3.25rem] md:text-[3rem] lg:text-[4rem] md:leading-[3.5rem] lg:leading-[4.5rem] uppercase`}>
                         <MarkText className='select-all'>Biocube</MarkText> é um portal onde você irá encontrar nossos contatos, nossa loja e projetos sociais.

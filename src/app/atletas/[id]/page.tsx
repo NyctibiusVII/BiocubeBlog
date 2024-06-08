@@ -63,9 +63,9 @@ export default function AthleteProfile({ params }: ProfileParamsProps) {
                 />
             </Head>
 
-            <Background type='top' />
-
             <main className='md:pt-12 lg:pt-20 xl:pt-24 pb-[5.625rem] xl:pb-40'>
+                <Background type='top' />
+
                 <div className='w-full flex flex-col items-center gap-4 lg:gap-6'>
                     <Image
                         className='w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] border border-glacier-white/25 rounded-full'

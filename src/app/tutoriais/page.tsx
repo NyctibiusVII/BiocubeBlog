@@ -58,9 +58,9 @@ export default function Tutorial() {
                 />
             </Head>
 
-            <Background type='top' />
-
             <main className='sm:gap-32 lg:gap-40'>
+                <Background type='top' />
+
                 <h1 className='sr-only'>Como Montar o Cubo Mágico</h1>
                 <div className='w-full flex-center flex-col gap-4 lg:gap-6'>
                     <p className={`${quattrocento.className} text-center text-wrap text-[2.1rem] leading-9 xs:text-4xl sm:text-[2.5rem] md:text-5xl lg:text-6xl`}>

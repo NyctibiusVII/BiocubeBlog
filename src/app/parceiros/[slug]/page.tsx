@@ -15,12 +15,9 @@ export default function Partner({ params }: PartnerParamsProps) {
     if(!partnerSlug.includes(slug)) notFound()
 
     return (
-        <>
+        <main>
             <Background type='left' />
-
-            <main>
-                <PartnerContent slug={slug} />
-            </main>
-        </>
+            <PartnerContent slug={slug} />
+        </main>
     )
 }
