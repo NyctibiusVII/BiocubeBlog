@@ -47,6 +47,11 @@
     .transform-to-modal { @apply sm:bg-quantum/75 md:bg-transparent lg:bg-quantum/75 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-125 z-[60] }
 }
 
+@keyframes small-float {
+	0% { transform: translatey(0); }
+	50% { transform: translatey(-10%); }
+	100% { transform: translatey(0); }
+}
 @keyframes float {
 	0% { transform: translatey(0); }
 	50% { transform: translatey(-25%); }
