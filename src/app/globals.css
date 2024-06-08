@@ -44,6 +44,7 @@
     .filter-leafgreen { filter: brightness(0) saturate(100%) invert(67%) sepia(96%) saturate(881%) hue-rotate(88deg) brightness(95%) contrast(103%); }
     .text-color-animate { @apply bg-clip-text bg-purple-shock bg-gradient-to-r from-purple-shock via-leafgreen bg-[length:700%_700%] text-transparent animate-[color_5s_linear_infinite] }
     .bg-color-animate { @apply bg-revell bg-gradient-to-r from-moonmist via-salamander/90 to-moonmist/75 bg-[length:700%_700%] animate-[color_2s_linear_infinite] }
+    .transform-to-modal { @apply sm:bg-quantum/75 md:bg-transparent lg:bg-quantum/75 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-125 z-[60] }
 }
 
 @keyframes float {

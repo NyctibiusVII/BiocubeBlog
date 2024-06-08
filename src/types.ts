@@ -1,21 +1,5 @@
 import { StaticImageData } from 'next/image'
-
-export type ApiVideosType = {
-    snippet: {
-        title: string
-        description: string
-        resourceId: {
-            videoId: string
-        }
-    }
-}
-export interface YoutubePlaylistProps {
-    apiKey: string
-    cubeTutorialImages: {
-        src: string
-        alt: string
-    }[]
-}
+import { ReactNode } from 'react'
 
 export type Modalities =
     | '222'
@@ -135,7 +119,7 @@ export type ProfileParamsProps = {
     params: { id: WCA_ID }
 }
 export type ProfileCardContentProps = {
-    id:         WCA_ID | BIOCUBE_ID
+    personId:   WCA_ID | BIOCUBE_ID
     name:       string
     occupation: string
     primaryColor:
@@ -157,6 +141,28 @@ export interface GenerateMetadataProps extends ProfileParamsProps {
 export type MenuItensType = {
     href: string
     content: APP_ROUTES_NAME
+}
+export type SocialMediaButtonsType = {
+    personId: WCA_ID | BIOCUBE_ID
+    isShort?: boolean
+    fallback?: ReactNode
+    className?: string
+}
+export type ApiVideosType = {
+    snippet: {
+        title: string
+        description: string
+        resourceId: {
+            videoId: string
+        }
+    }
+}
+export interface YoutubePlaylistProps {
+    apiKey: string
+    cubeTutorialImages: {
+        src: string
+        alt: string
+    }[]
 }
 
 /* -------------------------------------------------- */

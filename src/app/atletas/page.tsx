@@ -34,7 +34,7 @@ export default function Athletes() {
                         const { name, occupation } = teamBiocubeInfo[id]
 
                         const profileInfo: ProfileCardContentProps = {
-                            id,
+                            personId: id,
                             name,
                             occupation,
                             primaryColor: occupation === 'CEO' ? 'purple' : occupation === 'Atleta Biocube' ? 'green' : occupation === 'Desenvolvedor Parceiro' ? 'orange' : 'white',
