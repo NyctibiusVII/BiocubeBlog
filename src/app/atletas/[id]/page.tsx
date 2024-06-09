@@ -17,6 +17,7 @@ import { quattrocento }     from '@/app/fonts'
 import { useProfileImages } from '@/hooks/useProfileImages'
 import { processText }      from '@/utils'
 
+import StructuredData         from '@/components/structured-data'
 import { Background }         from '@/components/background'
 import { SocialMediaButtons } from '@/components/social-media-buttons'
 import { PersonalWCARecords } from '@/components/personal-wca-records'
@@ -29,7 +30,6 @@ import {
 import { notFound } from 'next/navigation'
 
 import Image from 'next/image'
-import Head  from 'next/head'
 
 export default function AthleteProfile({ params }: ProfileParamsProps) {
     const { id: wcaId } = params
@@ -55,45 +55,37 @@ export default function AthleteProfile({ params }: ProfileParamsProps) {
     }
 
     return (
-        <>
-            <Head>
-                <script
-                    type='application/ld+json'
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        <main className='md:pt-12 lg:pt-20 xl:pt-24 pb-[5.625rem] xl:pb-40'>
+            <StructuredData data={structuredData} />
+            <Background type='top' />
+
+            <div className='w-full flex flex-col items-center gap-4 lg:gap-6'>
+                <Image
+                    className='w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] border border-glacier-white/25 rounded-full'
+                    src={profileImageList[wcaId]}
+                    width={200}
+                    height={200}
+                    placeholder='blur'
+                    priority={true}
+                    alt={`Image de perfil WCA de ${wcaInfo.name}`}
                 />
-            </Head>
 
-            <main className='md:pt-12 lg:pt-20 xl:pt-24 pb-[5.625rem] xl:pb-40'>
-                <Background type='top' />
-
-                <div className='w-full flex flex-col items-center gap-4 lg:gap-6'>
-                    <Image
-                        className='w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] border border-glacier-white/25 rounded-full'
-                        src={profileImageList[wcaId]}
-                        width={200}
-                        height={200}
-                        placeholder='blur'
-                        priority={true}
-                        alt={`Image de perfil WCA de ${wcaInfo.name}`}
-                    />
-
-                    <div className='w-full flex flex-col items-center gap-2 lg:gap-4'>
-                        <h1 className={`${quattrocento.className} uppercase text-center text-3xl sm:text-[2.5rem] md:text-5xl lg:text-6xl`}>{wcaInfo.name}</h1>
-                        <p className={`w-full max-w-[47.375rem] xl:max-w-[57rem] ${quattrocento.className} text-center text-wrap leading-5 sm:text-lg sm:leading-[1.375rem] md:text-xl md:leading-6 xl:text-2xl`} dangerouslySetInnerHTML={{ __html: athleteDescription(wcaId)}} />
-                    </div>
+                <div className='w-full flex flex-col items-center gap-2 lg:gap-4'>
+                    <h1 className={`${quattrocento.className} uppercase text-center text-3xl sm:text-[2.5rem] md:text-5xl lg:text-6xl`}>{wcaInfo.name}</h1>
+                    <p className={`w-full max-w-[47.375rem] xl:max-w-[57rem] ${quattrocento.className} text-center text-wrap leading-5 sm:text-lg sm:leading-[1.375rem] md:text-xl md:leading-6 xl:text-2xl`} dangerouslySetInnerHTML={{ __html: athleteDescription(wcaId)}} />
                 </div>
+            </div>
 
-                <PersonalWCARecords infoRaw={wcaInfo}  />
+            <PersonalWCARecords infoRaw={wcaInfo}  />
 
-                <div className='w-full flex flex-col items-center gap-4'>
-                    <h2 className='w-fit uppercase font-medium text-xl md:text-2xl lg:text-3xl'>Me siga nas redes</h2>
+            <div className='w-full flex flex-col items-center gap-4'>
+                <h2 className='w-fit uppercase font-medium text-xl md:text-2xl lg:text-3xl'>Me siga nas redes</h2>
 
-                    <div className='flex justify-center flex-wrap gap-4'>
-                        <SocialMediaButtons personId={wcaId}  />
-                    </div>
+                <div className='flex justify-center flex-wrap gap-4'>
+                    <SocialMediaButtons personId={wcaId}  />
                 </div>
-            </main>
-        </>
+            </div>
+        </main>
     )
 }
 
