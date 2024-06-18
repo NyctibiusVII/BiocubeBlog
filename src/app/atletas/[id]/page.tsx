@@ -36,6 +36,8 @@ export default function AthleteProfile({ params }: ProfileParamsProps) {
     if(!athletesId_WCA.includes(wcaId)) notFound()
 
     const wcaInfo = use(getWcaProfile(wcaId))
+    if(!wcaInfo) notFound()
+
     const structuredData = use(getAthleteProfileStructuredData(wcaInfo))
 
     const { profileImageList } = useProfileImages()
@@ -97,6 +99,7 @@ export async function generateMetadata(
 
     if(!athletesId_WCA.includes(wcaId)) return {}
     const wcaInfo = await getWcaProfile(wcaId)
+    if(!wcaInfo) return {}
 
     return {
         title: `Biocube - Atleta ${wcaInfo.name}`,

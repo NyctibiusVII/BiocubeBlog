@@ -64,3 +64,24 @@ export const processWCARecords = {
         }
     }
 }
+
+export const formFallback = {
+    success: 'Mensagem enviada com sucesso!',
+    error: 'Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.',
+    min: {
+        firstName: 'O nome precisa conter mais de 2 caracteres.',
+        lastName: 'O sobrenome precisa conter mais de 2 caracteres.',
+        email: 'O email precisa conter mais de 4 caracteres.',
+        phone: 'O telefone precisa conter mais de 9 dígitos.',
+        message: 'A mensagem precisa conter mais de 9 caracteres.'
+    },
+    max: {
+        firstName: 'O nome precisa conter no máximo 10 caracteres.',
+        lastName: 'O sobrenome precisa conter no máximo 10 caracteres.',
+        email: 'O email precisa conter no máximo 50 caracteres.',
+        phone: 'O telefone precisa conter no máximo 11 dígitos.',
+        message: 'A mensagem precisa conter no máximo 600 caracteres.'
+    },
+    email: 'Email inválido.',
+    phone: 'O telefone precisa conter somente caracteres numéricos.'
+}

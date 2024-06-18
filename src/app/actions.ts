@@ -13,21 +13,28 @@ import {
     rootUrl,
     wcaApi
 } from '@/biocube-data'
+import { formFallback } from '@/utils'
 
 import { EmailTemplate } from '@/components/email-template'
 
 import { Resend } from 'resend'
 import { z }      from 'zod'
+import { formFallback } from '@/utils'
 
 /* -------------------------------------------------- */
 
-export async function getWcaProfile(wcaId: string) {
-    const wcaInfo: WcaInfoType = await fetch(`${wcaApi}/persons/${wcaId}.json`, {
+export async function getWcaProfile(wcaId: WCA_ID) {
+    const wcaInfo: WcaInfoType | null = await fetch(`${wcaApi}/persons/${wcaId}.json`, {
         method: 'GET',
         next: {
             revalidate: 60 * 60 * 24 // 24 hours
         }
-    }).then(res => res.json())
+    })
+    .then(res => res.json())
+    .catch(err => {
+        console.error(err)
+        return null
+    })
 
     return wcaInfo
 }
@@ -134,26 +141,31 @@ export const sendMessage = async (prevFallbackState: FormFallbackState, formData
     if (error) {
         console.error(error)
         return {
-            fallbackMessage: fallback.error,
+            fallbackMessage: formFallback.error,
             fallbackStatus: 'error'
         }
     }
 
     return {
-        fallbackMessage: fallback.success,
+        fallbackMessage: formFallback.success,
         fallbackStatus: 'success'
     }
 }
 
 const validateFormData = (rawFormData: { [key: string]: string }) => {
-    if (!rawFormData) return { fallbackMessage: fallback.error, fallbackStatus: 'error' }
+    if (Object.keys(rawFormData).length === 0) return { fallbackMessage: formFallback.error, fallbackStatus: 'error' }
+
+    const requiredFields = ['first-name', 'last-name', 'email', 'phone', 'message']
+    for (const field of requiredFields) {
+        if (!rawFormData.hasOwnProperty(field)) return { fallbackMessage: formFallback.error, fallbackStatus: 'error' }
+    }
 
     const contactFormSchema = z.object({
-        'first-name': z.string().min(3, { message: fallback.min.firstName }).max(10, { message: fallback.max.firstName }),
-        'last-name': z.string().min(3, { message: fallback.min.lastName }).max(10, { message: fallback.max.lastName }),
-        email: z.string().min(5, { message: fallback.min.email }).max(50, { message: fallback.max.email }).email({ message: fallback.email }),
-        phone: z.string().min(10, { message: fallback.min.phone }).max(11, { message: fallback.max.phone }).regex(/^\d+$/, { message: fallback.phone }),
-        message: z.string().min(10, { message: fallback.min.message }).max(600, { message: fallback.max.message }),
+        'first-name': z.string().min(3, { message: formFallback.min.firstName }).max(10, { message: formFallback.max.firstName }),
+        'last-name': z.string().min(3, { message: formFallback.min.lastName }).max(10, { message: formFallback.max.lastName }),
+        email: z.string().min(5, { message: formFallback.min.email }).max(50, { message: formFallback.max.email }).email({ message: formFallback.email }),
+        phone: z.string().min(10, { message: formFallback.min.phone }).max(11, { message: formFallback.max.phone }).regex(/^\d+$/, { message: formFallback.phone }),
+        message: z.string().min(10, { message: formFallback.min.message }).max(600, { message: formFallback.max.message }),
     })
 
     const validationResult = contactFormSchema.safeParse(rawFormData)
