@@ -7,6 +7,10 @@ import {
 const rootUrl = 'https://biocube.vercel.app' || 'https://biocube.com'
 const wcaApi  = 'https://raw.githubusercontent.com/robiningelbrecht/wca-rest-api/master/api'
 
+const youtubeApi = 'https://youtube.googleapis.com/youtube/v3'
+const youtubeChannelId  = 'UC5Fm57YxhlaRMkh6iGlhBqg'
+const youtubePlaylistId = 'PLWSSy4mS4c5aXhdj5K6f72E4vDTtk-cY4'
+
 const storeWebsite      = 'https://www.biocubeoficial.com.br'
 const instagramBiocube  = 'https://www.instagram.com/biocubeoficial'
 const facebookBiocube   = 'https://www.facebook.com/biocubeoficial'
@@ -170,6 +174,9 @@ const teamBiocubeInfo = {
 export {
     rootUrl,
     wcaApi,
+    youtubeApi,
+    youtubeChannelId,
+    youtubePlaylistId,
     storeWebsite,
     instagramBiocube,
     facebookBiocube,

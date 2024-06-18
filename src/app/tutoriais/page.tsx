@@ -2,13 +2,20 @@ import {
     tutorialMetadata,
     tutorialStructuredData
 } from '@/biocube-seo'
+import {
+    youtubeChannelId,
+    youtubePlaylistId
+} from '@/biocube-data'
+
+import { getCubePlaylist } from '../actions'
+import { quattrocento } from '../fonts'
 
 import StructuredData      from '@/components/structured-data'
 import { Background }      from '@/components/background'
 import { YoutubePlaylist } from '@/components/youtube-playlist'
 import { MarkText }        from '@/components/mark-text'
 
-import { quattrocento } from '../fonts'
+import { use } from 'react'
 
 import Image from 'next/image'
 import Link  from 'next/link'
@@ -16,8 +23,9 @@ import Link  from 'next/link'
 export const metadata = tutorialMetadata
 
 export default function Tutorial() {
-    const API_KEY = process.env.YOUTUBE_API_V3_KEY || ''
-    const channelId = 'UC5Fm57YxhlaRMkh6iGlhBqg'
+    const playlist = use(getCubePlaylist(youtubePlaylistId))
+
+    const suspenseFallbackClassName = 'bg-quantum rounded-2xl animate-pulse'
     const cubeTutorialImages = [
         {
             src: '/assets/cube/tutorial/cube-white-cross.svg',
@@ -118,12 +126,37 @@ export default function Tutorial() {
                 }) }
             </div>
 
-            <YoutubePlaylist apiKey={API_KEY} cubeTutorialImages={cubeTutorialImages} />
+            { playlist ?
+                <YoutubePlaylist videos={playlist} cubeTutorialImages={cubeTutorialImages} />
+            :
+                <div className='w-full flex-center flex-col gap-4 sm:gap-8'>
+                    <div className='w-full 2xl:max-w-[90%] bg-quantum/50 border-l border-scarlet/50 py-3 px-8 rounded-3xl'>
+                        <h2 className='lg:text-2xl'>SERVER ERROR - 500</h2>
+                        <p className='text-revell/75 text-wrap text-sm sm:text-base md:text-lg lg:text-xl'>Oops! Por algum motivo não foi possível acessar a playlist do tutorial.</p>
+                    </div>
 
-            <Link href={`https://www.youtube.com/channel/${channelId}`} target='_blank' title='Ir para o canal da Suzane Coelho no Youtube.' className='w-full max-w-[90%] min-h-[3.75rem] outline outline-2 outline-revell/75 lg:outline-quantum hover:outline-hematite-soil shadow-[0_0_1rem_-0,5rem_#111111,inset_0_0_1rem_-0.5rem_#111111] my-24 flex-center relative group transition-all rounded-lg overflow-hidden'>
+                    <span className='w-fit sm:w-full md:w-fit lg:w-full 2xl:max-w-[90%] bg-quantum/50 p-4 sm:p-8 sm:pr-0 md:p-4 lg:p-8 lg:pr-0 rounded-3xl group flex flex-row-reverse items-center justify-center'>
+                        <span className='w-full hidden sm:flex md:hidden lg:flex justify-end pr-[5%]'>
+                            <span className={`w-[150px] h-[150px] lg:w-[190px] lg:h-[190px] xl:w-[222px] xl:h-[222px] ${suspenseFallbackClassName}`} />
+                        </span>
+
+                        <span className='w-full max-w-[272px] xs:max-w-[299.5px] sm:max-w-[327px] md:max-w-[382px] lg:max-w-[437px] xl:max-w-[512px] flex-center flex-col gap-4 overflow-visible'>
+                            <span className={`w-[272px] h-[153px] xs:w-[299.5px] xs:h-[168.47px] sm:w-[327px] sm:h-[183.94px] md:w-[382px] md:h-[214.88px] lg:w-[437px] lg:h-[245.81px] xl:w-[512px] xl:h-[288px] ${suspenseFallbackClassName}`} />
+
+                            <span className='w-full flex items-start flex-col gap-2'>
+                                <span className={`w-full h-5 md:h-6 ${suspenseFallbackClassName}`} />
+                                <span className={`w-full max-w-[90%] h-[0.875rem] md:h-4 ${suspenseFallbackClassName}`} />
+                                <span className={`w-full max-w-[70%] h-[0.875rem] md:h-4 -mt-1 ${suspenseFallbackClassName}`} />
+                            </span>
+                        </span>
+                    </span>
+                </div>
+            }
+
+            <Link href={`https://www.youtube.com/channel/${youtubeChannelId}`} target='_blank' title='Ir para o canal da Suzane Coelho no Youtube.' className='w-full max-w-[90%] min-h-[3.75rem] outline outline-2 outline-revell/75 lg:outline-quantum hover:outline-hematite-soil shadow-[0_0_1rem_-0,5rem_#111111,inset_0_0_1rem_-0.5rem_#111111] my-24 flex-center relative group transition-all rounded-lg overflow-hidden'>
                 <div className='w-full h-full flex-center justify-between gap-4 py-1 px-12 xl:px-16 backdrop-blur-lg group-hover:backdrop-blur-xl z-10'>
                     <h3 className='sr-only'>Gostou!? Aprenda muito mais no canal do Youtube. @SuzaneCoelho</h3>
-                    <p className='w-full uppercase text-wrap text-center lg:text-left font-bold lg:font-medium text-sm leading-4 sm:text-base md:text-lg lg:text-xl sm:leading-5 md:leading-5 lg:leading-5'>
+                    <p className='w-full uppercase text-wrap text-center lg:text-left font-bold lg:font-medium text-sm sm:text-base md:text-lg lg:text-xl leading-4 sm:leading-5 md:leading-5 lg:leading-5'>
                         <span className='lg:text-2xl'>eae, gostou!?</span>
                         <br />
                         Aprenda muito mais no canal do{' '}

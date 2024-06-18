@@ -158,7 +158,7 @@ export type ApiVideosType = {
     }
 }
 export interface YoutubePlaylistProps {
-    apiKey: string
+    videos: ApiVideosType[]
     cubeTutorialImages: {
         src: string
         alt: string

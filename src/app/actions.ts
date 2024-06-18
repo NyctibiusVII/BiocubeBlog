@@ -1,17 +1,19 @@
 'use server'
 
-import type {
-    ContactFormData,
-    FormFallbackState,
+import {
+    type ApiVideosType,
+    type ContactFormData,
+    type FormFallbackState,
+    type WcaInfoType,
     WCA_ID,
-    WcaInfoType
 } from '@/types'
 
 import {
     teamBiocubeInfo,
     emailBiocube,
     rootUrl,
-    wcaApi
+    wcaApi,
+    youtubeApi
 } from '@/biocube-data'
 import { formFallback } from '@/utils'
 
@@ -19,7 +21,8 @@ import { EmailTemplate } from '@/components/email-template'
 
 import { Resend } from 'resend'
 import { z }      from 'zod'
-import { formFallback } from '@/utils'
+
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_V3_KEY || ''
 
 /* -------------------------------------------------- */
 
@@ -76,7 +79,7 @@ export async function getAthleteProfileStructuredData(wcaInfo: WcaInfoType) {
         }
     }
     const imageStructuredData = {
-        '@context': 'https://schema.org/',
+        '@context': 'https://schema.org',
         '@type': 'ImageObject',
         contentUrl: `${rootUrl}/assets/profiles/p_${wcaInfo.id}.png`,
         license: rootUrl,
@@ -90,26 +93,25 @@ export async function getAthleteProfileStructuredData(wcaInfo: WcaInfoType) {
 
 /* -------------------------------------------------- */
 
-const fallback = {
-    success: 'Mensagem enviada com sucesso!',
-    error: 'Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.',
-    min: {
-        firstName: 'O nome precisa conter mais de 2 caracteres.',
-        lastName: 'O sobrenome precisa conter mais de 2 caracteres.',
-        email: 'O email precisa conter mais de 4 caracteres.',
-        phone: 'O telefone precisa conter mais de 9 dígitos.',
-        message: 'A mensagem precisa conter mais de 9 caracteres.'
-    },
-    max: {
-        firstName: 'O nome precisa conter no máximo 10 caracteres.',
-        lastName: 'O sobrenome precisa conter no máximo 10 caracteres.',
-        email: 'O email precisa conter no máximo 50 caracteres.',
-        phone: 'O telefone precisa conter no máximo 11 dígitos.',
-        message: 'A mensagem precisa conter no máximo 600 caracteres.'
-    },
-    email: 'Email inválido.',
-    phone: 'O telefone precisa conter somente caracteres numéricos.'
+export async function getCubePlaylist(playlistId: string) {
+    const playlist: { items: ApiVideosType[] } | null = await fetch(`${youtubeApi}/playlistItems?part=snippet&playlistId=${playlistId}&key=${YOUTUBE_API_KEY}&fields=items(snippet(title,description,resourceId(videoId)))&maxResults=7`, {
+        method: 'GET',
+        next: {
+            revalidate: 60 * 60 * 24 * 30 * 6 // 6 Months
+        }
+    })
+    .then(res => res.json())
+    .catch(err => {
+        console.error(err)
+        return null
+    })
+
+    if(!playlist) return null
+
+    return playlist.items
 }
+
+/* -------------------------------------------------- */
 
 export const sendMessage = async (prevFallbackState: FormFallbackState, formData: FormData): Promise<FormFallbackState> => {
     const rawFormData = Object.fromEntries(formData) as { [key: string]: string }
