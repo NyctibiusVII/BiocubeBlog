@@ -10,11 +10,8 @@ import {
     useState
 } from 'react'
 
-const srcRubiksCubeObj = '/assets/cube/three/scene.gltf'
-useGLTF.preload(srcRubiksCubeObj)
-
-export const RubiksCube3D = () => {
-    const cubeObj = useGLTF(srcRubiksCubeObj)
+const RubiksCube3D = () => {
+    const cubeObj = useGLTF('/assets/cube/three/scene.gltf')
 
     const [cubeScale, setCubeScale] = useState(0.20)
     const [cubePosition, setCubePosition] = useState([0, -1, 0])
@@ -44,3 +41,5 @@ export const RubiksCube3D = () => {
         </Canvas>
     )
 }
+
+export default RubiksCube3D

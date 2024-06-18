@@ -1,8 +1,11 @@
-import { RubiksCube3D } from '@/components/rubiks-cube-3d'
-
+import dynamic from 'next/dynamic'
 import { passionOne } from './fonts'
-
 import Link from 'next/link'
+
+const RubiksCube3D = dynamic(() => import('../components/rubiks-cube-3d'), {
+    ssr: false,
+    // loading: () => <p>Loading...</p> // Imagem estática
+})
 
 export default function NotFound() {
     const hoverColors = ['hover:text-[#A38E1A]', 'hover:text-[#a63a0d]', 'hover:text-[#001D9B]', 'hover:text-[#007911]', 'hover:text-[#9A0016]']
