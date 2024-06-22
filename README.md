@@ -3,7 +3,7 @@
 </h1>
 <p align="center">
     <img alt="Plataforma" src="https://img.shields.io/static/v1?label=Plataforma&message=Web&color=111111&labelColor=01F26D">
-    <img alt="BiocubeBlog" src="https://img.shields.io/static/v1?label=Version&message=1.11.51&color=111111&labelColor=01F26D">
+    <img alt="BiocubeBlog" src="https://img.shields.io/static/v1?label=Version&message=1.12.52&color=111111&labelColor=01F26D">
     <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/NyctibiusVII/BiocubeBlog?color=111111&labelColor=01F26D">
     <a href="https://github.com/NyctibiusVII/BiocubeBlog/blob/main/LICENSE">
         <img alt="Licença" src="https://img.shields.io/static/v1?label=License&message=MIT&color=111111&labelColor=01F26D">
@@ -58,7 +58,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
     <img width="180px" src=".github/atleta-mobile.png">
     <img width="180px" src=".github/tutoriais-mobile.png">
     <img width="180px" src=".github/sobre-mobile.png">
+    <img width="180px" src=".github/atletas-2-mobile.png">
     <img width="180px" src=".github/404-mobile.png">
+    <img width="180px" src=".github/tutoriais-2-mobile.png">
 </div>
 
 ## Rodando o projeto 🚴🏻‍♂️
